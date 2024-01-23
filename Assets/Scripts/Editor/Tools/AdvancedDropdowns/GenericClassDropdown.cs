@@ -10,7 +10,7 @@ namespace tools.advanceddropdowns
     class GenericClassDropdown : AdvancedDropdown
     {
         const string ROOT_NAME = "Selector";
-        const string BASE_ASSEMBLY_NAME = "myproject";
+        const string BASE_ASSEMBLY_NAME = "HEIMO";
         readonly char[] CLASS_SEPARATOR = new char[] { '.' };
 
         private Dictionary<string, AdvancedDropdownItem> _subClassesCache;

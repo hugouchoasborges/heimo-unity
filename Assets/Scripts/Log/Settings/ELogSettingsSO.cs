@@ -13,7 +13,7 @@ namespace log.settings
         public static ELogSettingsSO Instance => MenuExtensions.LoadSOFromResources<ELogSettingsSO>(Path.Combine(CONFIG_FILE_ROOT, CONFIG_FILE_PATH));
 
         [Header("Constants")]
-        [ShowInInspector] public const string CONFIG_FILE_ROOT = "Assets/MyProject/Resources/Settings/LOG";
+        [ShowInInspector] public const string CONFIG_FILE_ROOT = "Assets/HEIMO/Resources/Settings/LOG";
 
         [ShowInInspector] public const string CONFIG_FILE_PATH = "log_settings.asset";
         [ShowInInspector] public const string CONFIG_FILE_TYPES = "log_type_settings.asset";
@@ -31,13 +31,13 @@ namespace log.settings
         // ========================== Menu Items ============================
         // ----------------------------------------------------------------------------------
 
-        [MenuItem("MyProject/LOG/Settings")]
+        [MenuItem("HEIMO/LOG/Settings")]
         public static void MenuItem_LogSettings()
         {
             MenuExtensions.PingOrCreateSO<ELogSettingsSO>(Path.Combine(CONFIG_FILE_ROOT, CONFIG_FILE_PATH));
         }
 
-        [MenuItem("MyProject/LOG/Type Settings")]
+        [MenuItem("HEIMO/LOG/Type Settings")]
         public static void MenuItem_LogTypeSettings()
         {
             MenuExtensions.PingOrCreateSO<ELogTypeSettingsSO>(Path.Combine(CONFIG_FILE_ROOT, CONFIG_FILE_TYPES));

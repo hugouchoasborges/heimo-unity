@@ -9,18 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/MyProject/Scenes/Application.unity
+    path: Assets/HEIMO/Scenes/Application.unity
     guid: e562d5e7349529a4698da3f001fff576
   - enabled: 1
-    path: Assets/MyProject/Scenes/Game.unity
+    path: Assets/HEIMO/Scenes/Game.unity
     guid: ad875a5b2de58614b8ea81ce872331ef
   - enabled: 1
-    path: Assets/MyProject/Scenes/Initialization.unity
+    path: Assets/HEIMO/Scenes/Initialization.unity
     guid: ec655a9e747212843ab1834823762008
   - enabled: 1
-    path: Assets/MyProject/Scenes/MainMenu.unity
+    path: Assets/HEIMO/Scenes/Menu.unity
     guid: 058f707d88e328746ad5a3f0edad5e81
   - enabled: 1
-    path: Assets/MyProject/Scenes/PauseMenu.unity
-    guid: 266e0f76187f58940a81e07050d97a1c
+    path: Assets/HEIMO/Scenes/Garage.unity
+    guid: 9abd7fc319ea0524b8d5a2e7d70f3f97
   m_configObjects: {}

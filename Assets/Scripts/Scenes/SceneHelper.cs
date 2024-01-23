@@ -144,10 +144,10 @@ namespace scenes
             EditorSceneManager.OpenScene(scenePath, mode);
         }
 
-        [MenuItem("MyProject/SCENES/Application")]
+        [MenuItem("HEIMO/SCENES/Application")]
         private static void LoadScene_Application() => LoadEditorScene(SceneType.APPLICATION);
 
-        [MenuItem("MyProject/SCENES/Initialization")]
+        [MenuItem("HEIMO/SCENES/Initialization")]
         private static void LoadScene_Initialization() => LoadEditorScene(SceneType.INITIALIZATION);
 
         private static void LoadScene_Base()
@@ -157,7 +157,7 @@ namespace scenes
             LoadEditorScene(SceneType.MAIN_MENU, OpenSceneMode.Additive);
         }
 
-        [MenuItem("MyProject/SCENES/Game")]
+        [MenuItem("HEIMO/SCENES/Game")]
         private static void LoadScene_Game()
         {
             LoadScene_Base();
@@ -165,7 +165,7 @@ namespace scenes
             application.ApplicationController.HackedStartupState = fsm.FSMStateType.GAME;
         }
 
-        [MenuItem("MyProject/SCENES/MainMenu")]
+        [MenuItem("HEIMO/SCENES/MainMenu")]
         private static void LoadScene_MainMenu()
         {
             LoadScene_Base();
@@ -173,12 +173,15 @@ namespace scenes
             application.ApplicationController.HackedStartupState = fsm.FSMStateType.MENU;
         }
 
-        [MenuItem("MyProject/SCENES/PauseMenu")]
-        private static void LoadScene_PauseMenu()
+        [MenuItem("HEIMO/SCENES/Garage")]
+        private static void LoadScene_Garage()
         {
-            LoadScene_Base();
-            SetSceneAsActive(SceneType.MAIN_MENU);
-            application.ApplicationController.HackedStartupState = fsm.FSMStateType.PAUSED;
+            LoadEditorScene(SceneType.APPLICATION);
+            LoadEditorScene(SceneType.GARAGE, OpenSceneMode.Additive);
+            LoadEditorScene(SceneType.MAIN_MENU, OpenSceneMode.Additive);
+
+            SetSceneAsActive(SceneType.GARAGE);
+            application.ApplicationController.HackedStartupState = fsm.FSMStateType.GARAGE;
         }
 
 #endif

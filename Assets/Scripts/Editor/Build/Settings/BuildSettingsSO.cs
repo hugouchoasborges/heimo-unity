@@ -58,7 +58,7 @@ namespace build
             }
         }
 
-        public const string CONFIG_FILE_ROOT = "Assets/MyProject/Resources/Settings/Build";
+        public const string CONFIG_FILE_ROOT = "Assets/HEIMO/Resources/Settings/Build";
         public const string CONFIG_FILE_PATH = "build_settings.asset";
 
         public const string BUILD_NUMBER_FORMAT = @"\d\d\d";
@@ -92,7 +92,7 @@ namespace build
         // ========================== Menu Items ============================
         // ----------------------------------------------------------------------------------
 
-        [MenuItem("MyProject/Build Settings", priority = 1000)]
+        [MenuItem("HEIMO/Build Settings", priority = 1000)]
         public static void MenuItem_BuildSettings()
         {
             MenuExtensions.PingOrCreateSO<BuildSettingsSO>(Path.Combine(CONFIG_FILE_ROOT, CONFIG_FILE_PATH), minSize: new Vector2(680, 480));

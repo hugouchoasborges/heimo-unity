@@ -13,7 +13,7 @@ namespace fsm.settings
         public static FSMSettingsSO Instance => MenuExtensions.LoadSOFromResources<FSMSettingsSO>(Path.Combine(CONFIG_FILE_ROOT, CONFIG_FILE_PATH));
 
         [Header("Constants")]
-        [ShowInInspector] public const string CONFIG_FILE_ROOT = "Assets/MyProject/Resources/Settings/FSM";
+        [ShowInInspector] public const string CONFIG_FILE_ROOT = "Assets/HEIMO/Resources/Settings/FSM";
 
         [ShowInInspector] public const string CONFIG_FILE_PATH = "fsm_settings.asset";
         [ShowInInspector] public const string CONFIG_FILE_STATES = "fsm_state_settings.asset";
@@ -46,25 +46,25 @@ namespace fsm.settings
         // ========================== MENU Items ============================
         // ----------------------------------------------------------------------------------
 
-        [MenuItem("MyProject/FSM/Settings")]
+        [MenuItem("HEIMO/FSM/Settings")]
         public static void MenuItem_FSMSettings()
         {
             MenuExtensions.PingOrCreateSO<FSMSettingsSO>(Path.Combine(CONFIG_FILE_ROOT, CONFIG_FILE_PATH));
         }
 
-        [MenuItem("MyProject/FSM/State Settings")]
+        [MenuItem("HEIMO/FSM/State Settings")]
         public static void MenuItem_FSMStateSettings()
         {
             MenuExtensions.PingOrCreateSO<FSMStateTypeSettingsSO>(Path.Combine(CONFIG_FILE_ROOT, CONFIG_FILE_STATES));
         }
 
-        [MenuItem("MyProject/FSM/Event Settings")]
+        [MenuItem("HEIMO/FSM/Event Settings")]
         public static void MenuItem_FSMEventSettings()
         {
             MenuExtensions.PingOrCreateSO<FSMEventTypeSettingsSO>(Path.Combine(CONFIG_FILE_ROOT, CONFIG_FILE_EVENTS));
         }
 
-        [MenuItem("MyProject/FSM/Controller Settings")]
+        [MenuItem("HEIMO/FSM/Controller Settings")]
         public static void MenuItem_FSMControllerSettings()
         {
             MenuExtensions.PingOrCreateSO<FSMTypeSettingsSO>(Path.Combine(CONFIG_FILE_ROOT, CONFIG_FILE_CONTROLLER));

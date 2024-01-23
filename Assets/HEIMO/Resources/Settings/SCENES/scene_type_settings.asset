@@ -18,8 +18,11 @@ MonoBehaviour:
   - APPLICATION
   - GAME
   - MAIN_MENU
-  - PAUSE_MENU
+  - GARAGE
   cachedEnumTypes:
+  - Name: PAUSE_MENU
+    Count: 5
+    Enabled: 0
   - Name: NONE
     Count: 3
     Enabled: 1
@@ -35,20 +38,20 @@ MonoBehaviour:
   - Name: MAIN_MENU
     Count: 2
     Enabled: 1
-  - Name: PAUSE_MENU
-    Count: 5
+  - Name: GARAGE
+    Count: 6
     Enabled: 1
   EnumScript: {fileID: 11500000, guid: bc9cc8a5f9121b2479f9cd51f3ac94bb, type: 3}
   _entries:
-  - SceneType: APPLICATION
-    Scene: Assets/MyProject/Scenes/Application.unity
-  - SceneType: GAME
-    Scene: Assets/MyProject/Scenes/Game.unity
-  - SceneType: MAIN_MENU
-    Scene: Assets/MyProject/Scenes/MainMenu.unity
   - SceneType: NONE
     Scene: 
   - SceneType: INITIALIZATION
-    Scene: Assets/MyProject/Scenes/Initialization.unity
-  - SceneType: PAUSE_MENU
-    Scene: Assets/MyProject/Scenes/PauseMenu.unity
+    Scene: Assets/HEIMO/Scenes/Initialization.unity
+  - SceneType: APPLICATION
+    Scene: Assets/HEIMO/Scenes/Application.unity
+  - SceneType: GAME
+    Scene: Assets/HEIMO/Scenes/Game.unity
+  - SceneType: MAIN_MENU
+    Scene: Assets/HEIMO/Scenes/Menu.unity
+  - SceneType: GARAGE
+    Scene: Assets/HEIMO/Scenes/Garage.unity
