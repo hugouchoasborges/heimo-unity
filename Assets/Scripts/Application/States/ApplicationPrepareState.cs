@@ -14,13 +14,26 @@ namespace application
         public override void OnStateEnter()
         {
             ApplyQualitySettings();
-            LoadBaseScenes(() => GoToState(FSMStateType.IDLE));
+            LoadBaseScenes(GoToNextState);
         }
 
         private void LoadBaseScenes(Action callback)
         {
-            SceneHelper.LoadSceneAsync(SceneType.GAME, LoadSceneMode.Additive, setAsActive: true);
+            //SceneHelper.LoadSceneAsync(SceneType.GAME, LoadSceneMode.Additive, setAsActive: true);
             SceneHelper.LoadSceneAsync(SceneType.MAIN_MENU, LoadSceneMode.Additive, setAsActive: false, callback);
+        }
+
+        private void GoToNextState()
+        {
+#if UNITY_EDITOR
+            if(ApplicationController.HackedStartupState != FSMStateType.NONE)
+            {
+                // Go to a hacked state
+                GoToState(ApplicationController.HackedStartupState);
+                return;
+            }
+#endif
+            GoToState(FSMStateType.IDLE);
         }
 
         private void ApplyQualitySettings()

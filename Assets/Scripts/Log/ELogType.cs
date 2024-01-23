@@ -8,5 +8,7 @@ namespace log
 		NONE = 3,
 		BUILD = 4,
 		SCENE = 5,
+		PLAYER = 6,
+		GARAGE = 7,
 }
 }
