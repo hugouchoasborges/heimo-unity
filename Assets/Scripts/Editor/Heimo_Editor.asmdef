@@ -1,6 +1,6 @@
 {
-    "name": "MyProject_Editor",
-    "rootNamespace": "myproject",
+    "name": "Heimo_Editor",
+    "rootNamespace": "heimo",
     "references": [
         "GUID:7c917cd486a3fca4786ae6d931957995"
     ],

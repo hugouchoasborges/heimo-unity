@@ -1,6 +1,6 @@
 {
-    "name": "MyProject",
-    "rootNamespace": "myproject",
+    "name": "Heimo",
+    "rootNamespace": "heimo",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
