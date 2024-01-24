@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdfa954663c58fb4f8aa4de36a564aae, type: 3}
+  m_Name: garage_settings
+  m_EditorClassIdentifier: 
+  _paintings:
+  - {fileID: 11400000, guid: 3137abcb3782fb14295dc2338e901344, type: 2}
+  - {fileID: 11400000, guid: 128521da409e737429a446f9ec25ec61, type: 2}
+  - {fileID: 11400000, guid: 332b579c48da5be40a1a0474b38fea58, type: 2}

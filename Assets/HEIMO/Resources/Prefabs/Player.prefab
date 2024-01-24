@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9015387086023553624}
   - component: {fileID: 7016117603297750774}
   m_Layer: 0
-  m_Name: Headlight_v1_17 (1)
+  m_Name: Headlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6166932776158327990}
   - component: {fileID: 7585800009582188666}
   m_Layer: 0
-  m_Name: Tire_v3_LeftRear_Collider
+  m_Name: Tire_Rear_left_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 8411747931180980801}
   - component: {fileID: 5842173364653546103}
   m_Layer: 0
-  m_Name: Bullbar_v1 (1)
+  m_Name: FrontBumper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 6102653944424216393}
   - component: {fileID: 5819567398028611322}
   m_Layer: 0
-  m_Name: Tire_v3_RightFront_Collider
+  m_Name: Tire_Front_Right_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 3618059081278979246}
   - component: {fileID: 4798347182818173768}
   m_Layer: 0
-  m_Name: Tire_v3_RightRear_Collider
+  m_Name: Tire_Rear_Right_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 4452259521734857839}
   - component: {fileID: 3004777170745315730}
   m_Layer: 0
-  m_Name: Tire_v3_LeftFront_Collider
+  m_Name: Tire_Front_left_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 4128945840670829198}
   - component: {fileID: 7691992021335726141}
   m_Layer: 0
-  m_Name: Exhaust_pipe_v1 (2)
+  m_Name: Exhaust_pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -644,7 +644,7 @@ GameObject:
   - component: {fileID: 2875787573468523423}
   - component: {fileID: 8326627071169747404}
   m_Layer: 0
-  m_Name: HCoupe_v1
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -693,7 +693,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0e6f027596e6089469ee18aa2128e9c7, type: 2}
+  - {fileID: 2100000, guid: b579c63d50dc4924f80ddec8b83d4a36, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -727,7 +727,7 @@ GameObject:
   - component: {fileID: 1152117919234243525}
   - component: {fileID: 2263081034956185523}
   m_Layer: 0
-  m_Name: Tire_v3_RightFront
+  m_Name: Tire_Front_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -810,7 +810,7 @@ GameObject:
   - component: {fileID: 8439812549998797620}
   - component: {fileID: 1868015325359010687}
   m_Layer: 0
-  m_Name: Tire_v3_LeftRear
+  m_Name: Tire_Rear_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -934,6 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a056eed0a2a264a976d73b04cd5863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bodyMesh: {fileID: 8326627071169747404}
 --- !u!114 &7059181104087227175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1084,7 +1085,7 @@ GameObject:
   - component: {fileID: 718212596607683504}
   - component: {fileID: 1048169321749677431}
   m_Layer: 0
-  m_Name: Tire_v3_RightRear
+  m_Name: Tire_Rear_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1185,8 +1186,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8546644030160161795}
-  - {fileID: 879332455260281209}
   - {fileID: 425934105290391238}
+  - {fileID: 879332455260281209}
   - {fileID: 3219267736528496018}
   m_Father: {fileID: 1768060939061312823}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1202,7 +1203,7 @@ GameObject:
   - component: {fileID: 5522771078613042384}
   - component: {fileID: 4176836901791214865}
   m_Layer: 0
-  m_Name: Tire_v3_LeftFront
+  m_Name: Tire_Front_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
