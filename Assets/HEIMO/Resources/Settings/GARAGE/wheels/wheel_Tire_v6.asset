@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0187fb38c9333654daa810283265d8e9, type: 3}
+  m_Name: wheel_Tire_v6
+  m_EditorClassIdentifier: 
+  name: Tire_v6
+  description: 
+  price: 0
+  bought: 0
+  asset: {fileID: 2100000, guid: 4f73ed35cefd1e844bd7319a2258e062, type: 2}
+  _meshLeft: {fileID: 4300002, guid: 9743d9abe3dbb834ebbe3413d358abb0, type: 3}
+  _meshRight: {fileID: 4300004, guid: 9743d9abe3dbb834ebbe3413d358abb0, type: 3}
+  _colliderRadius: 0.35

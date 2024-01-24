@@ -18,10 +18,12 @@ namespace garage.settings
 
         [ShowInInspector] public const string CONFIG_FILE_PATH = "garage_settings.asset";
 
-        [ShowInInspector] public const string CONFIG_FILE_PAINTINGS_ROOT = "Assets/HEIMO/Resources/Settings/GARAGE/paintings";
+        [ShowInInspector] public const string CONFIG_FILE_PAINTINGS_ROOT = CONFIG_FILE_ROOT + "/paintings";
+        [ShowInInspector] public const string CONFIG_FILE_WHEELS_ROOT = CONFIG_FILE_ROOT + "/wheels";
 
         [Header("Car Parts")]
-        [SerializeField] private List<CartPartPaintingSO> _paintings = new List<CartPartPaintingSO>();
+        [SerializeField] private List<CarPartPaintingSO> _paintings = new List<CarPartPaintingSO>();
+        [SerializeField] private List<CarPartWheelsSO> _wheels = new List<CarPartWheelsSO>();
 
 
 #if UNITY_EDITOR
@@ -32,6 +34,9 @@ namespace garage.settings
 
             if (_paintings.Count > 0)
                 _paintings.RemoveAll(p => p == null);
+
+            if (_wheels.Count > 0)
+                _wheels.RemoveAll(w => w == null);
         }
 
         // ----------------------------------------------------------------------------------
@@ -54,7 +59,7 @@ namespace garage.settings
             if (string.IsNullOrEmpty(name)) return;
 
             string filePath = string.Format("{0}/painting_{1}.asset", CONFIG_FILE_PAINTINGS_ROOT, name);
-            var newCarPart = MenuExtensions.PingOrCreateSO<CartPartPaintingSO>(filePath);
+            var newCarPart = MenuExtensions.PingOrCreateSO<CarPartPaintingSO>(filePath);
 
             if (material != null)
                 newCarPart.SetAsset(material);
@@ -81,6 +86,59 @@ namespace garage.settings
             {
                 Material material = selectedObject as Material;
                 Instance.CreateNewPainting(material.name, material);
+            }
+        }
+
+        // ========================== Wheels ============================
+
+
+        [Button(ButtonSizes.Medium, ButtonStyle.Box)]
+        public void CreateNewWheels(string name, Material material, Mesh meshLeft, Mesh meshRight)
+        {
+            if (string.IsNullOrEmpty(name)) return;
+
+            string filePath = string.Format("{0}/wheel_{1}.asset", CONFIG_FILE_WHEELS_ROOT, name);
+            var newCarPart = MenuExtensions.PingOrCreateSO<CarPartWheelsSO>(filePath);
+
+            if (material != null)
+                newCarPart.SetAsset(material, meshLeft, meshRight);
+
+            _wheels.Add(newCarPart);
+        }
+
+
+        [MenuItem("Assets/HEIMO/Create Wheels Asset from this", true)]
+        private static bool Validate_CreateNewWheelsFromSelection()
+        {
+            Object[] selectedObjects = Selection.objects;
+            return selectedObjects.Length == 3 &&
+                   ((selectedObjects[0] is Material && selectedObjects[1] is Mesh && selectedObjects[2] is Mesh));
+        }
+
+        [MenuItem("Assets/HEIMO/Create Wheels Asset from this", false)]
+        private static void CreateNewWheelsFromSelection()
+        {
+            Object[] selectedObjects = Selection.objects;
+
+            if (selectedObjects.Length == 3)
+            {
+                Material material = null;
+                Mesh meshLeft = null;
+                Mesh meshRight = null;
+
+                // Determine the order of Mesh and Material in the selected objects
+                if (selectedObjects[0] is Material && selectedObjects[1] is Mesh && selectedObjects[2] is Mesh)
+                {
+                    material = selectedObjects[0] as Material;
+                    meshLeft = selectedObjects[1] as Mesh;
+                    meshRight = selectedObjects[2] as Mesh;
+                }
+
+                if (material != null && meshLeft && meshRight != null)
+                {
+                    // Create wheels using the selected mesh and material
+                    Instance.CreateNewWheels(material.name, material, meshLeft, meshRight);
+                }
             }
         }
 #endif

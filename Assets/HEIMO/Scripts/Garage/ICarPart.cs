@@ -8,6 +8,7 @@ namespace garage
         string Description { get; }
 
         int Price { get; }
+        bool Bought { get; }
 
         TAsset Asset { get; }
 

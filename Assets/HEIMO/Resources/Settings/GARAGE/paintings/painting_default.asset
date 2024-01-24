@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e0b3174e038e142b39ea08f5e052ff, type: 3}
   m_Name: painting_default
   m_EditorClassIdentifier: 
-  name: 
+  name: default
   description: 
   price: 0
-  asset: {fileID: 0}
+  bought: 0
+  asset: {fileID: 2100000, guid: b579c63d50dc4924f80ddec8b83d4a36, type: 2}

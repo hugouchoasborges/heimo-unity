@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e0b3174e038e142b39ea08f5e052ff, type: 3}
   m_Name: painting_red
   m_EditorClassIdentifier: 
-  _name: 
-  _description: 
-  _price: 0
-  _asset: {fileID: 0}
+  name: red
+  description: 
+  price: 0
+  bought: 0
+  asset: {fileID: 2100000, guid: 1883acf63a7d6a14da734dc881598fbf, type: 2}

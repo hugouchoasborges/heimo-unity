@@ -935,6 +935,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bodyMesh: {fileID: 8326627071169747404}
+  _wheelMeshLeftFilters:
+  - {fileID: 8439812549998797620}
+  - {fileID: 5522771078613042384}
+  _wheelMeshRightFilters:
+  - {fileID: 718212596607683504}
+  - {fileID: 1152117919234243525}
+  _wheelMeshRenderers:
+  - {fileID: 1048169321749677431}
+  - {fileID: 1868015325359010687}
+  - {fileID: 2263081034956185523}
+  - {fileID: 4176836901791214865}
+  _wheelColliders:
+  - {fileID: 4798347182818173768}
+  - {fileID: 7585800009582188666}
+  - {fileID: 5819567398028611322}
+  - {fileID: 3004777170745315730}
 --- !u!114 &7059181104087227175
 MonoBehaviour:
   m_ObjectHideFlags: 0
