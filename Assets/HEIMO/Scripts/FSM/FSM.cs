@@ -66,6 +66,7 @@ namespace fsm
         // ----------------------------------------------------------------------------------
 
         // Static options
+        public static void DispatchGameEventToAll(FSMEventType eventType, object data = null, bool waitNextFrame = true) => DispatchGameEvent(FSMControllerType.ALL, FSMStateType.ALL, eventType, data: data, waitNextFrame: waitNextFrame);
         public static void DispatchGameEvent(FSMControllerType controllerType, FSMStateType stateType, FSMEventType eventType, object data = null, bool waitNextFrame = true)
         {
             if (waitNextFrame)

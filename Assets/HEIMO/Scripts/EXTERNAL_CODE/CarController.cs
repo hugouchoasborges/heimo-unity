@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 
-namespace player
+/// CODE FROM https://www.youtube.com/watch?v=DU-yminXEX0
+
+namespace external
 {
     public class CarController : MonoBehaviour
     {

@@ -49,17 +49,17 @@ MonoBehaviour:
   EnumScript: {fileID: 11500000, guid: 78b9aa1882d19a04ca59ceb9cc1d3299, type: 3}
   _entries:
   - LogType: FSM_DISPATCH_EVENT
-    Enabled: 0
+    Enabled: 1
   - LogType: FSM_STATE_TRANSITION
-    Enabled: 0
+    Enabled: 1
   - LogType: FSM_RECEIVE_EVENT
-    Enabled: 0
+    Enabled: 1
   - LogType: NONE
-    Enabled: 0
+    Enabled: 1
   - LogType: BUILD
     Enabled: 1
   - LogType: SCENE
-    Enabled: 0
+    Enabled: 1
   - LogType: PLAYER
     Enabled: 1
   - LogType: GARAGE
