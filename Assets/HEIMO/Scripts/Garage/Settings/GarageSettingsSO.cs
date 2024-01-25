@@ -30,6 +30,86 @@ namespace garage.settings
         [SerializeField] private List<CarPartRoofAttachmentSO> _roofAttachments = new List<CarPartRoofAttachmentSO>();
 
 
+        // ========================== Painting ============================
+
+        public CarPartPaintingSO GetPaintingInUse()
+        {
+            foreach (var item in _paintings)
+                if (item.InUse)
+                    return item;
+
+            return null;
+        }
+
+        public void MarkPaintingAsInUse(CarPartPaintingSO painting)
+        {
+            foreach (var item in _paintings)
+                item.InUse = false;
+
+            painting.InUse = true;
+        }
+
+
+        // ========================== Wheels ============================
+
+        public CarPartWheelsSO GetWheelsInUse()
+        {
+            foreach (var item in _wheels)
+                if (item.InUse)
+                    return item;
+
+            return null;
+        }
+
+        public void MarkWheelsAsInUse(CarPartWheelsSO wheels)
+        {
+            foreach (var item in _wheels)
+                item.InUse = false;
+
+            wheels.InUse = true;
+        }
+
+
+        // ========================== Front Bumper ============================
+
+        public CarPartFrontBumperSO GetFrontBumperInUse()
+        {
+            foreach (var item in _frontBumpers)
+                if (item.InUse)
+                    return item;
+
+            return null;
+        }
+
+        public void MarkFrontBumperAsInUse(CarPartFrontBumperSO painting)
+        {
+            foreach (var item in _frontBumpers)
+                item.InUse = false;
+
+            painting.InUse = true;
+        }
+
+
+        // ========================== Roof Attachment ============================
+
+        public CarPartRoofAttachmentSO GetRoofAttachmentInUse()
+        {
+            foreach (var item in _roofAttachments)
+                if (item.InUse)
+                    return item;
+
+            return null;
+        }
+
+        public void MarkRoofAttachmentAsInUse(CarPartRoofAttachmentSO painting)
+        {
+            foreach (var item in _roofAttachments)
+                item.InUse = false;
+
+            painting.InUse = true;
+        }
+
+
 #if UNITY_EDITOR
 
         private void OnValidate()
@@ -56,22 +136,6 @@ namespace garage.settings
 
         // ========================== Painting ============================
 
-        public CarPartPaintingSO GetPaintingInUse()
-        {
-            foreach (var item in _paintings)
-                if (item.InUse)
-                    return item;
-
-            return null;
-        }
-
-        public void MarkPaintingAsInUse(CarPartPaintingSO painting)
-        {
-            foreach (var item in _paintings)
-                item.InUse = false;
-
-            painting.InUse = true;
-        }
 
         [Button(ButtonSizes.Medium, ButtonStyle.Box)]
         public void CreateNewPainting(string name, Material material)
@@ -110,23 +174,6 @@ namespace garage.settings
         }
 
         // ========================== Wheels ============================
-
-        public CarPartWheelsSO GetWheelsInUse()
-        {
-            foreach (var item in _wheels)
-                if (item.InUse)
-                    return item;
-
-            return null;
-        }
-
-        public void MarkWheelsAsInUse(CarPartWheelsSO wheels)
-        {
-            foreach (var item in _wheels)
-                item.InUse = false;
-
-            wheels.InUse = true;
-        }
 
         [Button(ButtonSizes.Medium, ButtonStyle.Box)]
         public void CreateNewWheels(string name, Material material, Mesh meshLeft, Mesh meshRight)
@@ -180,23 +227,6 @@ namespace garage.settings
 
         // ========================== Front Bumper ============================
 
-        public CarPartFrontBumperSO GetFrontBumperInUse()
-        {
-            foreach (var item in _frontBumpers)
-                if (item.InUse)
-                    return item;
-
-            return null;
-        }
-
-        public void MarkFrontBumperAsInUse(CarPartFrontBumperSO painting)
-        {
-            foreach (var item in _frontBumpers)
-                item.InUse = false;
-
-            painting.InUse = true;
-        }
-
         [Button(ButtonSizes.Medium, ButtonStyle.Box)]
         public void CreateNewFrontBumper(string name, Material material, Mesh mesh)
         {
@@ -246,23 +276,6 @@ namespace garage.settings
         }
 
         // ========================== Roof Attachment ============================
-
-        public CarPartRoofAttachmentSO GetRoofAttachmentInUse()
-        {
-            foreach (var item in _roofAttachments)
-                if (item.InUse)
-                    return item;
-
-            return null;
-        }
-
-        public void MarkRoofAttachmentAsInUse(CarPartRoofAttachmentSO painting)
-        {
-            foreach (var item in _roofAttachments)
-                item.InUse = false;
-
-            painting.InUse = true;
-        }
 
         [Button(ButtonSizes.Medium, ButtonStyle.Box)]
         public void CreateNewRoofAttachment(string name, Material material, Mesh mesh)

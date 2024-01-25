@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: build_settings
   m_EditorClassIdentifier: 
   BuildScenesHolder:
-  - Scene: Assets/MyProject/Scenes/Initialization.unity
-  - Scene: Assets/MyProject/Scenes/Application.unity
-  - Scene: Assets/MyProject/Scenes/MainMenu.unity
-  - Scene: Assets/MyProject/Scenes/Game.unity
-  - Scene: Assets/MyProject/Scenes/PauseMenu.unity
+  - Scene: Assets/HEIMO/Scenes/Initialization.unity
+  - Scene: Assets/HEIMO/Scenes/Application.unity
+  - Scene: Assets/HEIMO/Scenes/Game.unity
+  - Scene: Assets/HEIMO/Scenes/Menu.unity
+  - Scene: Assets/HEIMO/Scenes/Garage.unity
   StandaloneBuild:
     BuildOptions: 8
     BuildRootFromDataPath: Builds/StandaloneWindows64
-    PlayerExectable: myproject.exe
+    PlayerExectable: heimo.exe
     WaitForManagedDebugger: 0
   StandaloneDebugBuild:
     BuildOptions: 269
