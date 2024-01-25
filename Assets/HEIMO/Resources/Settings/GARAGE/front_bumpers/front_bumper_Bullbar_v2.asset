@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Bullbar_v2
   description: 
-  price: 0
-  bought: 0
-  asset: {fileID: 2100000, guid: 510dbabbdf52c9c438743ece6b06aba8, type: 2}
+  price: 40
+  _material: {fileID: 2100000, guid: 510dbabbdf52c9c438743ece6b06aba8, type: 2}
   _mesh: {fileID: 4300000, guid: bc67eb85b525f8d48af0fa5a09789f9e, type: 3}

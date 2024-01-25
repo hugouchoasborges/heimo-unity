@@ -4,27 +4,27 @@ using UnityEngine;
 
 namespace garage
 {
-    public class CarPartRoofAttachmentSO : AbstractCarPartSO<Material>
+    public class CarPartRoofAttachmentSO : AbstractCarPartSO
     {
-        public override Material Asset => asset;
-
-        // Mesh
+        [SerializeField] private Material _material;
         [SerializeField] private Mesh _mesh;
+
+        public Material Material => _material;
         public Mesh Mesh => _mesh;
 
 
 #if UNITY_EDITOR
         protected override void ApplyToRunningPlayer(PlayerController playerController)
         {
-            playerController.ApplyRoofAttachment(Asset, Mesh);
+            playerController.ApplyRoofAttachment(Material, Mesh);
             PlayerInventorySO.Instance.SetRoofAttachmentInUse(this);
         }
 
         public void SetAsset(Material material, Mesh mesh)
         {
-            SetAsset(mesh.name, material);
-
+            _material = material;
             _mesh = mesh;
+            name = Mesh.name;
         }
 #endif
     }

@@ -3,6 +3,7 @@ using UnityEngine;
 using System.IO;
 using tools;
 using System.Collections.Generic;
+using System.Linq;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -16,6 +17,16 @@ namespace garage.settings
         [Header("Constants")]
         public const string CONFIG_FILE_ROOT = "Assets/HEIMO/Resources/Settings/GARAGE";
         public const string CONFIG_FILE_PATH = "player_inventory.asset";
+
+        [Header("Basic Info")]
+        [SerializeField][Range(0, 100000)] private int _credit = 0;
+
+        public int Credit
+        {
+            get => _credit;
+            set => _credit = value;
+        }
+
 
         [Header("Inventory - Car Parts")]
         [SerializeField] private List<CarPartPaintingSO> _paintings = new List<CarPartPaintingSO>();
@@ -57,6 +68,19 @@ namespace garage.settings
         public void SetRoofAttachmentInUse(CarPartRoofAttachmentSO roofAttachment)
         {
             _roofAttachmentInUse = roofAttachment;
+        }
+
+
+        // ========================== Ownership CHeck ============================
+
+        public bool PlayerHasCarPart(ICarPart carPart)
+        {
+            if (_paintings.Any(part => (part as ICarPart) == carPart)) return true;
+            if (_wheels.Any(part => (part as ICarPart) == carPart)) return true;
+            if (_frontBumpers.Any(part => (part as ICarPart) == carPart)) return true;
+            if (_roofAttachments.Any(part => (part as ICarPart) == carPart)) return true;
+
+            return false;
         }
 
 #if UNITY_EDITOR

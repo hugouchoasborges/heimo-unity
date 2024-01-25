@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: garage_settings
   m_EditorClassIdentifier: 
   _paintings:
-  - {fileID: 11400000, guid: 128521da409e737429a446f9ec25ec61, type: 2}
   - {fileID: 11400000, guid: 3137abcb3782fb14295dc2338e901344, type: 2}
   - {fileID: 11400000, guid: 332b579c48da5be40a1a0474b38fea58, type: 2}
+  - {fileID: 11400000, guid: 98f5e260abb49ef4283b852084ac3d02, type: 2}
+  - {fileID: 11400000, guid: 3a023ff9adf9c5843a68560887d07212, type: 2}
   _wheels:
   - {fileID: 11400000, guid: 6ed4ca08a4efcbd4590d57df8a351b18, type: 2}
   - {fileID: 11400000, guid: dce22aebfabaaea4b8a7ea6f0e82e43f, type: 2}
@@ -53,3 +54,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fe111f76856b1544d903960a5a672be4, type: 2}
   - {fileID: 11400000, guid: 1d2ac4639c64a144b97218fa1bca70cd, type: 2}
   - {fileID: 11400000, guid: cf0c81210d9ddca458176e416a9af34f, type: 2}
+  _garageEntryPrefab: {fileID: 0}

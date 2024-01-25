@@ -23,7 +23,7 @@ namespace player
             CarPartPaintingSO painting = playerInventory.PaintingInUse;
             if (painting != null)
             {
-                playerController.ApplyPainting(painting.Asset);
+                playerController.ApplyPainting(painting.Material);
                 playerInventory.SetPaintingInUse(painting);
             }
 
@@ -31,7 +31,7 @@ namespace player
             CarPartWheelsSO wheels = playerInventory.WheelInUse;
             if (wheels != null)
             {
-                playerController.ApplyWheels(wheels.Asset, wheels.MeshLeft, wheels.MeshRight, wheels.ColliderRadius);
+                playerController.ApplyWheels(wheels.Material, wheels.MeshLeft, wheels.MeshRight, wheels.ColliderRadius);
                 playerInventory.SetWheelsInUse(wheels);
             }
 
@@ -39,7 +39,7 @@ namespace player
             CarPartFrontBumperSO frontBumper = playerInventory.FrontBumperInUse;
             if (frontBumper != null)
             {
-                playerController.ApplyFrontBumper(frontBumper.Asset, frontBumper.Mesh);
+                playerController.ApplyFrontBumper(frontBumper.Material, frontBumper.Mesh);
                 playerInventory.SetFrontBumperInUse(frontBumper);
             }
 
@@ -47,7 +47,7 @@ namespace player
             CarPartRoofAttachmentSO roofAttachment = playerInventory.RoofAttachmentInUse;
             if (roofAttachment != null)
             {
-                playerController.ApplyRoofAttachment(roofAttachment.Asset, roofAttachment.Mesh);
+                playerController.ApplyRoofAttachment(roofAttachment.Material, roofAttachment.Mesh);
                 playerInventory.SetRoofAttachmentInUse(roofAttachment);
             }
         }

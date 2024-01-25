@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Empty
   description: 
-  price: 0
-  bought: 0
-  asset: {fileID: 0}
+  price: 40
+  _material: {fileID: 0}
   _mesh: {fileID: 0}

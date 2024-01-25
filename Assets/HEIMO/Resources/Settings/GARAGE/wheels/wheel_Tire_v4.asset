@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Tire_v4
   description: 
-  price: 0
-  bought: 0
-  asset: {fileID: 2100000, guid: e62ce5b313c3fc8479752b1f2b7192e0, type: 2}
+  price: 1500
+  _material: {fileID: 2100000, guid: e62ce5b313c3fc8479752b1f2b7192e0, type: 2}
   _meshLeft: {fileID: 4300002, guid: 235e5a16243f8864aaf9f78d3d91b591, type: 3}
   _meshRight: {fileID: 4300004, guid: 235e5a16243f8864aaf9f78d3d91b591, type: 3}
   _colliderRadius: 0.5

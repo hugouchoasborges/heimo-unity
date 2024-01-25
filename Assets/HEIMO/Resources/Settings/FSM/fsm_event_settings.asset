@@ -22,6 +22,7 @@ MonoBehaviour:
   - REQUEST_GOTO_GARAGE
   - APPLICATION_GARAGE_ENTERED
   - APPLICATION_GARAGE_EXIT
+  - ON_CREDIT_UPDATED
   cachedEnumTypes:
   - Name: NONE
     Count: 0
@@ -49,5 +50,8 @@ MonoBehaviour:
     Enabled: 1
   - Name: APPLICATION_GARAGE_EXIT
     Count: 8
+    Enabled: 1
+  - Name: ON_CREDIT_UPDATED
+    Count: 9
     Enabled: 1
   EnumScript: {fileID: 11500000, guid: d26dcaf8c86161a45ab77c89bbf019a5, type: 3}

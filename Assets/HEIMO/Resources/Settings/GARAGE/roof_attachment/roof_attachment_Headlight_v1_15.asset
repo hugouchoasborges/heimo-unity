@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5dbd94e076f24f4bb58b943974b4514, type: 3}
   m_Name: roof_attachment_Headlight_v1_15
   m_EditorClassIdentifier: 
-  name: 
+  name: Headlight_v1_15
   description: 
-  price: 0
-  bought: 0
-  inUse: 0
-  asset: {fileID: 0}
-  _mesh: {fileID: 0}
+  price: 20
+  _material: {fileID: 2100000, guid: 0c08e068419a85c46873074aa3bccfa2, type: 2}
+  _mesh: {fileID: 4300010, guid: 1766e30d3cb6c8448bca951d37459903, type: 3}

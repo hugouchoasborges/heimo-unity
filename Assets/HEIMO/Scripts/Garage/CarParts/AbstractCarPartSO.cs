@@ -5,25 +5,15 @@ using UnityEngine;
 
 namespace garage
 {
-    public abstract class AbstractCarPartSO<T> : ScriptableObject, ICarPart<T> where T : Object
+    public abstract class AbstractCarPartSO : ScriptableObject, ICarPart
     {
         [SerializeField] protected string name;
         [SerializeField][TextArea(4, 10)] protected string description;
         [SerializeField][MinValue(0)] protected int price;
 
-        [SerializeField] protected T asset;
-
         public string Name => name;
         public string Description => description;
         public int Price => price;
-
-        public abstract T Asset { get; }
-
-        public void SetAsset(string name, T asset)
-        {
-            this.asset = asset;
-            this.name = name;
-        }
 
 #if UNITY_EDITOR
         [Button("Garage Settings")]

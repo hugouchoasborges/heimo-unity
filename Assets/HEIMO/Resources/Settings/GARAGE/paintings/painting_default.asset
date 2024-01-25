@@ -14,6 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: default
   description: 
-  price: 0
-  bought: 0
-  asset: {fileID: 2100000, guid: b579c63d50dc4924f80ddec8b83d4a36, type: 2}
+  price: 150
+  _material: {fileID: 0}

@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77a208468ba867e4faadd23b74dd4247, type: 3}
-  m_Name: front_bumper_Bullbar_v1
+  m_Script: {fileID: 11500000, guid: 22e0b3174e038e142b39ea08f5e052ff, type: 3}
+  m_Name: painting_yellow
   m_EditorClassIdentifier: 
-  name: Bullbar_v1
+  name: yellow
   description: 
-  price: 40
-  _material: {fileID: 2100000, guid: 051a3fa57fab02f49a6463588297b786, type: 2}
-  _mesh: {fileID: 4300000, guid: d7a4c612c1099a74bae3e342b76dc76e, type: 3}
+  price: 150
+  _material: {fileID: 2100000, guid: b579c63d50dc4924f80ddec8b83d4a36, type: 2}

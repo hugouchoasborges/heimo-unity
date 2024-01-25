@@ -4,10 +4,11 @@ using UnityEngine;
 
 namespace garage
 {
-    public class CarPartWheelsSO : AbstractCarPartSO<Material>
+    public class CarPartWheelsSO : AbstractCarPartSO
     {
         // Material
-        public override Material Asset => asset;
+        [SerializeField] private Material _material;
+        public Material Material => _material;
 
         [Header("L/R Meshes")]
         [SerializeField] private Mesh _meshLeft;
@@ -22,7 +23,8 @@ namespace garage
 
         public void SetAsset(Material material, Mesh meshLeft, Mesh meshRight)
         {
-            SetAsset(material.name, material);
+            name = material.name;
+            _material = material;
             _meshLeft = meshLeft;
             _meshRight = meshRight;
         }
@@ -30,7 +32,7 @@ namespace garage
 #if UNITY_EDITOR
         protected override void ApplyToRunningPlayer(PlayerController playerController)
         {
-            playerController.ApplyWheels(Asset, MeshLeft, MeshRight, ColliderRadius);
+            playerController.ApplyWheels(Material, MeshLeft, MeshRight, ColliderRadius);
             PlayerInventorySO.Instance.SetWheelsInUse(this);
         }
 #endif

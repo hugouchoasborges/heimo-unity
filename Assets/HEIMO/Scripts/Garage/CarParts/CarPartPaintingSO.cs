@@ -4,15 +4,21 @@ using UnityEngine;
 
 namespace garage
 {
-    public class CarPartPaintingSO : AbstractCarPartSO<Material>
+    public class CarPartPaintingSO : AbstractCarPartSO
     {
-        public override Material Asset => asset;
+        [SerializeField] private Material _material;
+        public Material Material => _material;
 
+        public void SetAsset(Material material)
+        {
+            name = material.name;
+            _material = material;
+        }
 
 #if UNITY_EDITOR
         protected override void ApplyToRunningPlayer(PlayerController playerController)
         {
-            playerController.ApplyPainting(Asset);
+            playerController.ApplyPainting(Material);
             PlayerInventorySO.Instance.SetPaintingInUse(this);
         }
 #endif

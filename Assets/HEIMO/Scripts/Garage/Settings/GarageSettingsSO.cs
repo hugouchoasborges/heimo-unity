@@ -29,6 +29,26 @@ namespace garage.settings
         [SerializeField] private List<CarPartFrontBumperSO> _frontBumpers = new List<CarPartFrontBumperSO>();
         [SerializeField] private List<CarPartRoofAttachmentSO> _roofAttachments = new List<CarPartRoofAttachmentSO>();
 
+        [Header("Prefabs")]
+        [SerializeField] private GameObject _garageEntryPrefab;
+        public GameObject GarageEntryPrefab => _garageEntryPrefab;
+
+        public List<ICarPart> GetAllCarParts()
+        {
+            List<ICarPart> allParts = new List<ICarPart>();
+
+            foreach (var item in _paintings)
+                allParts.Add(item as ICarPart);
+            foreach (var item in _wheels)
+                allParts.Add(item as ICarPart);
+            foreach (var item in _frontBumpers)
+                allParts.Add(item as ICarPart);
+            foreach (var item in _roofAttachments)
+                allParts.Add(item as ICarPart);
+
+            return allParts;
+        }
+
 
 #if UNITY_EDITOR
 
@@ -68,6 +88,9 @@ namespace garage.settings
         // ========================== Painting ============================
 
 
+        [MenuItem("Assets/HEIMO/Store/Create New Painting", false)]
+        public static void CreateNewPainting() => Instance.CreateNewPainting("NewPainting", null);
+
         [Button(ButtonSizes.Medium, ButtonStyle.Box)]
         public void CreateNewPainting(string name, Material material)
         {
@@ -77,9 +100,10 @@ namespace garage.settings
             var newCarPart = MenuExtensions.PingOrCreateSO<CarPartPaintingSO>(filePath);
 
             if (material != null)
-                newCarPart.SetAsset(material.name, material);
+                newCarPart.SetAsset(material);
 
-            _paintings.Add(newCarPart);
+            if (!_paintings.Contains(newCarPart))
+                _paintings.Add(newCarPart);
         }
 
 
@@ -106,6 +130,9 @@ namespace garage.settings
 
         // ========================== Wheels ============================
 
+        [MenuItem("Assets/HEIMO/Store/Create New Wheels", false)]
+        public static void CreateNewWheels() => Instance.CreateNewWheels("NewWheels", null, null, null);
+
         [Button(ButtonSizes.Medium, ButtonStyle.Box)]
         public void CreateNewWheels(string name, Material material, Mesh meshLeft, Mesh meshRight)
         {
@@ -117,7 +144,8 @@ namespace garage.settings
             if (material != null)
                 newCarPart.SetAsset(material, meshLeft, meshRight);
 
-            _wheels.Add(newCarPart);
+            if (!_wheels.Contains(newCarPart))
+                _wheels.Add(newCarPart);
         }
 
 
@@ -158,6 +186,9 @@ namespace garage.settings
 
         // ========================== Front Bumper ============================
 
+        [MenuItem("Assets/HEIMO/Store/Create New FrontBumper", false)]
+        public static void CreateNewFrontBumper() => Instance.CreateNewFrontBumper("NewFrontBumper", null, null);
+
         [Button(ButtonSizes.Medium, ButtonStyle.Box)]
         public void CreateNewFrontBumper(string name, Material material, Mesh mesh)
         {
@@ -169,7 +200,8 @@ namespace garage.settings
             if (material != null)
                 newCarPart.SetAsset(material, mesh);
 
-            _frontBumpers.Add(newCarPart);
+            if (!_frontBumpers.Contains(newCarPart))
+                _frontBumpers.Add(newCarPart);
         }
 
 
@@ -208,6 +240,10 @@ namespace garage.settings
 
         // ========================== Roof Attachment ============================
 
+        [MenuItem("Assets/HEIMO/Store/Create New RoofAttachment", false)]
+        public static void CreateNewRoofAttachment() => Instance.CreateNewRoofAttachment("NewRoofAttachment", null, null);
+
+
         [Button(ButtonSizes.Medium, ButtonStyle.Box)]
         public void CreateNewRoofAttachment(string name, Material material, Mesh mesh)
         {
@@ -219,7 +255,8 @@ namespace garage.settings
             if (material != null)
                 newCarPart.SetAsset(material, mesh);
 
-            _roofAttachments.Add(newCarPart);
+            if (!_roofAttachments.Contains(newCarPart))
+                _roofAttachments.Add(newCarPart);
         }
 
 

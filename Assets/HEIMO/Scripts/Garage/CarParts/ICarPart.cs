@@ -2,15 +2,11 @@
 
 namespace garage
 {
-    internal interface ICarPart<TAsset> where TAsset : Object
+    public interface ICarPart
     {
         string Name { get; }
         string Description { get; }
 
         int Price { get; }
-
-        TAsset Asset { get; }
-
-        void SetAsset(string name, TAsset asset);
     }
 }
