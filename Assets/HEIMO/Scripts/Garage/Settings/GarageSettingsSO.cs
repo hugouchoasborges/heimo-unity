@@ -243,7 +243,7 @@ namespace garage.settings
                 if (material != null && mesh != null)
                 {
                     // Create wheels using the selected mesh and material
-                    Instance.CreateNewRoofAttachment(material.name, material, mesh);
+                    Instance.CreateNewRoofAttachment(mesh.name, material, mesh);
                 }
             }
         }

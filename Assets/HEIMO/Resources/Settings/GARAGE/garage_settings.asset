@@ -18,3 +18,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 332b579c48da5be40a1a0474b38fea58, type: 2}
   _wheels:
   - {fileID: 11400000, guid: 6ed4ca08a4efcbd4590d57df8a351b18, type: 2}
+  - {fileID: 11400000, guid: dce22aebfabaaea4b8a7ea6f0e82e43f, type: 2}
+  - {fileID: 11400000, guid: 0df008154668e4b4d825a145459b2b2c, type: 2}
+  - {fileID: 11400000, guid: bb06c2cf7b4f19b4d980905470ae7f3a, type: 2}
+  - {fileID: 11400000, guid: f774ed356e9a3094ca96ca0de2d3d681, type: 2}
+  - {fileID: 11400000, guid: 631a8c08f922a0b4a962d8285057b34c, type: 2}
+  _frontBumpers:
+  - {fileID: 11400000, guid: e0152b9674f90c44993712f0758011e0, type: 2}
+  - {fileID: 11400000, guid: 959d90ed7f170374b8825e4dd44382b0, type: 2}
+  - {fileID: 11400000, guid: 97a3015902e10d74ca51c695b8e34082, type: 2}
+  - {fileID: 11400000, guid: 41922eca004b0894a8f1aa94f62c6568, type: 2}
+  - {fileID: 11400000, guid: d73379badbd60a745a62945940a00fa8, type: 2}
+  _roofAttachments:
+  - {fileID: 11400000, guid: 2f08769d5a36bc047acd4b226d4c31bc, type: 2}
