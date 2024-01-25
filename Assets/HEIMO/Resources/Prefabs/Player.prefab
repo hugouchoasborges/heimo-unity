@@ -951,6 +951,8 @@ MonoBehaviour:
   - {fileID: 7585800009582188666}
   - {fileID: 5819567398028611322}
   - {fileID: 3004777170745315730}
+  _frontBumperMeshFilter: {fileID: 8411747931180980801}
+  _frontBumperMeshRenderer: {fileID: 5842173364653546103}
 --- !u!114 &7059181104087227175
 MonoBehaviour:
   m_ObjectHideFlags: 0

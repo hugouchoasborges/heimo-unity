@@ -20,10 +20,12 @@ namespace garage.settings
 
         [ShowInInspector] public const string CONFIG_FILE_PAINTINGS_ROOT = CONFIG_FILE_ROOT + "/paintings";
         [ShowInInspector] public const string CONFIG_FILE_WHEELS_ROOT = CONFIG_FILE_ROOT + "/wheels";
+        [ShowInInspector] public const string CONFIG_FILE_FRONTBUMPER_ROOT = CONFIG_FILE_ROOT + "/front_bumpers";
 
         [Header("Car Parts")]
         [SerializeField] private List<CarPartPaintingSO> _paintings = new List<CarPartPaintingSO>();
         [SerializeField] private List<CarPartWheelsSO> _wheels = new List<CarPartWheelsSO>();
+        [SerializeField] private List<CarPartFrontBumperSO> _frontBumpers = new List<CarPartFrontBumperSO>();
 
 
 #if UNITY_EDITOR
@@ -73,7 +75,7 @@ namespace garage.settings
         {
             // This method is used to determine if the menu item should be enabled or disabled
             // For example, you can enable it only when a material is selected
-            return Selection.activeObject is Material;
+            return Selection.objects.Length == 1 && Selection.activeObject is Material;
         }
 
         [MenuItem("Assets/HEIMO/Create Painting Asset from this", false)]
@@ -138,6 +140,57 @@ namespace garage.settings
                 {
                     // Create wheels using the selected mesh and material
                     Instance.CreateNewWheels(material.name, material, meshLeft, meshRight);
+                }
+            }
+        }
+
+        // ========================== Front Bumper ============================
+
+
+        [Button(ButtonSizes.Medium, ButtonStyle.Box)]
+        public void CreateNewFrontBumper(string name, Material material, Mesh mesh)
+        {
+            if (string.IsNullOrEmpty(name)) return;
+
+            string filePath = string.Format("{0}/front_bumper_{1}.asset", CONFIG_FILE_FRONTBUMPER_ROOT, name);
+            var newCarPart = MenuExtensions.PingOrCreateSO<CarPartFrontBumperSO>(filePath);
+
+            if (material != null)
+                newCarPart.SetAsset(material, mesh);
+
+            _frontBumpers.Add(newCarPart);
+        }
+
+
+        [MenuItem("Assets/HEIMO/Create FrontBumper Asset from this", true)]
+        private static bool Validate_CreateNewFrontBumperFromSelection()
+        {
+            Object[] selectedObjects = Selection.objects;
+            return selectedObjects.Length == 2 &&
+                   ((selectedObjects[0] is Material && selectedObjects[1] is Mesh));
+        }
+
+        [MenuItem("Assets/HEIMO/Create FrontBumper Asset from this", false)]
+        private static void CreateNewFrontBumperFromSelection()
+        {
+            Object[] selectedObjects = Selection.objects;
+
+            if (selectedObjects.Length == 2)
+            {
+                Material material = null;
+                Mesh mesh = null;
+
+                // Determine the order of Mesh and Material in the selected objects
+                if (selectedObjects[0] is Material && selectedObjects[1] is Mesh)
+                {
+                    material = selectedObjects[0] as Material;
+                    mesh = selectedObjects[1] as Mesh;
+                }
+
+                if (material != null && mesh != null)
+                {
+                    // Create wheels using the selected mesh and material
+                    Instance.CreateNewFrontBumper(material.name, material, mesh);
                 }
             }
         }

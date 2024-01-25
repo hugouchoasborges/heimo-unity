@@ -12,11 +12,15 @@ namespace player
         [Header("Car Parts")]
         [SerializeField] private MeshRenderer _bodyMesh;
 
-        // Wheel Rear Right
+        // Wheel
         [SerializeField] private MeshFilter[] _wheelMeshLeftFilters;
         [SerializeField] private MeshFilter[] _wheelMeshRightFilters;
         [SerializeField] private MeshRenderer[] _wheelMeshRenderers;
         [SerializeField] private WheelCollider[] _wheelColliders;
+
+        // Bumper
+        [SerializeField] private MeshFilter _frontBumperMeshFilter;
+        [SerializeField] private MeshRenderer _frontBumperMeshRenderer;
 
         private void Awake()
         {
@@ -53,6 +57,13 @@ namespace player
 
             foreach (var wheelCollider in _wheelColliders)
                 wheelCollider.radius = colliderRadius;
+        }
+
+        [Button(ButtonSizes.Medium, ButtonStyle.Box)]
+        public void ApplyFrontBumper(Material material, Mesh mesh)
+        {
+            _frontBumperMeshRenderer.material = material;
+            _frontBumperMeshFilter.mesh = mesh;
         }
     }
 }
