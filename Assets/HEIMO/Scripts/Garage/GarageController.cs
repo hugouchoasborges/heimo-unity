@@ -1,4 +1,5 @@
 ﻿using garage.settings;
+using log;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting.YamlDotNet.Core.Tokens;
@@ -53,6 +54,13 @@ namespace garage
             List<ICarPart> allCarParts = GarageSettingsSO.Instance.GetAllCarParts();
             foreach (var carPart in allCarParts)
             {
+                if (!carPart.Vendable) continue;
+                if (carPart.Price <= 0)
+                {
+                    ELog.LogWarning(ELogType.NONE, "Car Part removed from store. {0}, price={1}", carPart.Name, carPart.Price);
+                    continue;
+                }
+
                 _entries.Add(CreateEntry(carPart));
             }
         }

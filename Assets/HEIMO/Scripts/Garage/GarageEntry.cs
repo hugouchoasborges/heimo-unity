@@ -1,3 +1,4 @@
+using fsm;
 using garage.settings;
 using TMPro;
 using UnityEngine;
@@ -118,7 +119,21 @@ namespace garage
 
         private void DoPreview()
         {
-            // TODO: Implement
+            FSMEventType eventType = FSMEventType.NONE;
+
+            if (_carPart is CarPartPaintingSO)
+                eventType = FSMEventType.REQUEST_PREVIEW_PAINTING ;
+            else if (_carPart is CarPartWheelsSO)
+                eventType = FSMEventType.REQUEST_PREVIEW_WHEELS;
+            else if (_carPart is CarPartFrontBumperSO)
+                eventType = FSMEventType.REQUEST_PREVIEW_FRONTBUMPER;
+            else if (_carPart is CarPartRoofAttachmentSO)
+                eventType = FSMEventType.REQUEST_PREVIEW_ROOFATTACHMENT;
+
+            if (eventType != FSMEventType.NONE)
+            {
+                FSM.DispatchGameEventToAll(eventType, _carPart);
+            }
         }
 
 #if UNITY_EDITOR

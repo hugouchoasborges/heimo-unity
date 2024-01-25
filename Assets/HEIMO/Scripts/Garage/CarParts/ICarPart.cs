@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace garage
+﻿namespace garage
 {
     public interface ICarPart
     {
@@ -8,5 +6,6 @@ namespace garage
         string Description { get; }
 
         int Price { get; }
+        bool Vendable { get; }
     }
 }

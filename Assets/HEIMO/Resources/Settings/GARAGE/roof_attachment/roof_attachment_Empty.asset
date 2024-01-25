@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5dbd94e076f24f4bb58b943974b4514, type: 3}
   m_Name: roof_attachment_Empty
   m_EditorClassIdentifier: 
-  name: Empty
+  name: Default
   description: 
-  price: 0
-  bought: 0
-  asset: {fileID: 0}
+  price: 1
+  vendable: 1
+  _material: {fileID: 0}
   _mesh: {fileID: 0}

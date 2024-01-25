@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a208468ba867e4faadd23b74dd4247, type: 3}
   m_Name: front_bumper_Empty
   m_EditorClassIdentifier: 
-  name: Empty
+  name: Default
   description: 
-  price: 40
+  price: 1
+  vendable: 1
   _material: {fileID: 0}
   _mesh: {fileID: 0}

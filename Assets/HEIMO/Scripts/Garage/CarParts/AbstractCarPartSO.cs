@@ -10,10 +10,12 @@ namespace garage
         [SerializeField] protected string name;
         [SerializeField][TextArea(4, 10)] protected string description;
         [SerializeField][MinValue(0)] protected int price;
+        [SerializeField] protected bool vendable = true;
 
         public string Name => name;
         public string Description => description;
         public int Price => price;
+        public bool Vendable => vendable;
 
 #if UNITY_EDITOR
         [Button("Garage Settings")]

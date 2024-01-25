@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd6096defe26ec4ab55a543fc2d914d, type: 3}
   m_Name: player_inventory
   m_EditorClassIdentifier: 
-  _paintings: []
-  _wheels: []
-  _frontBumpers: []
-  _roofAttachments: []
-  _paintingInUse: {fileID: 0}
-  _wheelInUse: {fileID: 11400000, guid: f774ed356e9a3094ca96ca0de2d3d681, type: 2}
-  _frontBumperInUse: {fileID: 0}
-  _roofAttachmentInUse: {fileID: 0}
+  _credit: 800
+  _paintings:
+  - {fileID: 11400000, guid: 3a023ff9adf9c5843a68560887d07212, type: 2}
+  _wheels:
+  - {fileID: 11400000, guid: bb06c2cf7b4f19b4d980905470ae7f3a, type: 2}
+  _frontBumpers:
+  - {fileID: 11400000, guid: 3dd9c674dda09b5498d455528808c2ff, type: 2}
+  _roofAttachments:
+  - {fileID: 11400000, guid: 71a1d7d2c81c36b4aa8696d7f5b647d5, type: 2}
+  _paintingInUse: {fileID: 11400000, guid: 3a023ff9adf9c5843a68560887d07212, type: 2}
+  _wheelInUse: {fileID: 11400000, guid: bb06c2cf7b4f19b4d980905470ae7f3a, type: 2}
+  _frontBumperInUse: {fileID: 11400000, guid: 3dd9c674dda09b5498d455528808c2ff, type: 2}
+  _roofAttachmentInUse: {fileID: 11400000, guid: 71a1d7d2c81c36b4aa8696d7f5b647d5, type: 2}
