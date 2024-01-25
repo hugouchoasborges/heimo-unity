@@ -66,15 +66,31 @@ namespace player
         [Button(ButtonSizes.Medium, ButtonStyle.Box)]
         public void ApplyFrontBumper(Material material, Mesh mesh)
         {
-            _frontBumperMeshRenderer.material = material;
-            _frontBumperMeshFilter.mesh = mesh;
+            if (material == null && mesh == null)
+            {
+                _frontBumperMeshRenderer.gameObject.SetActive(false);
+            }
+            else
+            {
+                _frontBumperMeshRenderer.gameObject.SetActive(true);
+                _frontBumperMeshRenderer.material = material;
+                _frontBumperMeshFilter.mesh = mesh;
+            }
         }
 
         [Button(ButtonSizes.Medium, ButtonStyle.Box)]
         public void ApplyRoofAttachment(Material material, Mesh mesh)
         {
-            _roofAttachmentMeshRenderer.material = material;
-            _roofAttachmentMeshFilter.mesh = mesh;
+            if (material == null && mesh == null)
+            {
+                _roofAttachmentMeshRenderer.gameObject.SetActive(false);
+            }
+            else
+            {
+                _roofAttachmentMeshRenderer.gameObject.SetActive(true);
+                _roofAttachmentMeshRenderer.material = material;
+                _roofAttachmentMeshFilter.mesh = mesh;
+            }
         }
     }
 }
