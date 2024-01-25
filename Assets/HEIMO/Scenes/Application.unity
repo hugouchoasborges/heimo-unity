@@ -262,32 +262,32 @@ MonoBehaviour:
   _statesSerialized:
   - EventType: 3
     State: {fileID: 1610442566}
-    AllowAllevents: 0
+    AllowAllevents: 1
     AllowedEventTypes: 
     IgnoredEventTypes: 
   - EventType: 1
     State: {fileID: 1610442567}
-    AllowAllevents: 0
+    AllowAllevents: 1
     AllowedEventTypes: 
     IgnoredEventTypes: 
   - EventType: 4
     State: {fileID: 1610442568}
-    AllowAllevents: 0
+    AllowAllevents: 1
     AllowedEventTypes: 
     IgnoredEventTypes: 
   - EventType: 5
     State: {fileID: 1610442569}
-    AllowAllevents: 0
+    AllowAllevents: 1
     AllowedEventTypes: 
     IgnoredEventTypes: 
   - EventType: 6
     State: {fileID: 1610442570}
-    AllowAllevents: 0
+    AllowAllevents: 1
     AllowedEventTypes: 
     IgnoredEventTypes: 
   - EventType: 7
     State: {fileID: 1610442571}
-    AllowAllevents: 0
+    AllowAllevents: 1
     AllowedEventTypes: 
     IgnoredEventTypes: 
   _lastEventsReceivedIgnoreList: 

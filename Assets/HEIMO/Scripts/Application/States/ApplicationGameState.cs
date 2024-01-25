@@ -13,6 +13,18 @@ namespace application
             FSM.DispatchGameEventToAll(FSMEventType.APPLICATION_GAME_ENTERED);
         }
 
+        public override void OnGameEventReceived(FSMEventType eventType, object data)
+        {
+            base.OnGameEventReceived(eventType, data);
+
+            switch (eventType)
+            {
+                case FSMEventType.REQUEST_RESET_GAME:
+                    applicationController.RestartSystem();
+                    break;
+            }
+        }
+
         public override void OnStateExit()
         {
             base.OnStateExit();

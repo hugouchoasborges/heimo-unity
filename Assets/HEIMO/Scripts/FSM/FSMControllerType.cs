@@ -7,5 +7,6 @@ namespace fsm
 		BOOTSTRAP = 2,
 		APPLICATION = 3,
 		PLAYER = 4,
+		MENU = 5,
 }
 }

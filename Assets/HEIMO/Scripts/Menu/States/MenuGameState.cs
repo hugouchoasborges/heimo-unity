@@ -1,14 +1,14 @@
-using fsm;
+﻿using fsm;
 
-namespace application
+namespace menu
 {
-    public class ApplicationGarageState : AbstractApplicationState
+    public class MenuGameState : AbstractMenuState
     {
         public override void OnStateEnter()
         {
             base.OnStateEnter();
 
-            FSM.DispatchGameEventToAll(FSMEventType.APPLICATION_GARAGE_ENTERED);
+            menuController.SetGameUIActive(true);
         }
 
         public override void OnGameEventReceived(FSMEventType eventType, object data)
@@ -17,8 +17,8 @@ namespace application
 
             switch (eventType)
             {
-                case FSMEventType.REQUEST_RESET_GARAGE:
-                    applicationController.RestartSystem();
+                case FSMEventType.APPLICATION_GARAGE_ENTERED:
+                    GoToState(FSMStateType.GARAGE);
                     break;
             }
         }
@@ -27,7 +27,7 @@ namespace application
         {
             base.OnStateExit();
 
-            FSM.DispatchGameEventToAll(FSMEventType.APPLICATION_GARAGE_EXIT);
+            menuController.SetGameUIActive(false);
         }
     }
 }
