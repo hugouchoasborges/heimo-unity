@@ -1,5 +1,5 @@
-﻿using player;
-using Sirenix.OdinInspector;
+﻿using garage.settings;
+using player;
 using UnityEngine;
 
 namespace garage
@@ -22,7 +22,7 @@ namespace garage
 
         public void SetAsset(Material material, Mesh meshLeft, Mesh meshRight)
         {
-            SetAsset(material);
+            SetAsset(material.name, material);
             _meshLeft = meshLeft;
             _meshRight = meshRight;
         }
@@ -31,6 +31,7 @@ namespace garage
         protected override void ApplyToRunningPlayer(PlayerController playerController)
         {
             playerController.ApplyWheels(Asset, MeshLeft, MeshRight, ColliderRadius);
+            GarageSettingsSO.Instance.MarkWheelsAsInUse(this);
         }
 #endif
     }

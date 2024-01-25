@@ -16,5 +16,6 @@ MonoBehaviour:
   description: 
   price: 0
   bought: 0
+  inUse: 0
   asset: {fileID: 0}
   _mesh: {fileID: 0}

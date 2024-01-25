@@ -12,6 +12,6 @@ namespace garage
 
         TAsset Asset { get; }
 
-        void SetAsset(TAsset asset);
+        void SetAsset(string name, TAsset asset);
     }
 }

@@ -1,5 +1,4 @@
 ﻿using garage.settings;
-using log.settings;
 using player;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -12,20 +11,31 @@ namespace garage
         [SerializeField][TextArea(4, 10)] protected string description;
         [SerializeField][MinValue(0)] protected int price;
         [SerializeField] protected bool bought = false;
+        [SerializeField] protected bool inUse = false;
 
         [SerializeField] protected T asset;
 
         public string Name => name;
         public string Description => description;
         public int Price => price;
-        public bool Bought => bought;
+        public bool Bought
+        {
+            get => bought;
+            set => bought = value;
+        }
+
+        public bool InUse
+        {
+            get => inUse;
+            set => inUse = value;
+        }
 
         public abstract T Asset { get; }
 
-        public void SetAsset(T asset)
+        public void SetAsset(string name, T asset)
         {
             this.asset = asset;
-            this.name = asset.name;
+            this.name = name;
         }
 
 #if UNITY_EDITOR

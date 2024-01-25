@@ -1,4 +1,5 @@
-﻿using player;
+﻿using garage.settings;
+using player;
 using UnityEngine;
 
 namespace garage
@@ -16,11 +17,12 @@ namespace garage
         protected override void ApplyToRunningPlayer(PlayerController playerController)
         {
             playerController.ApplyFrontBumper(Asset, Mesh);
+            GarageSettingsSO.Instance.MarkFrontBumperAsInUse(this);
         }
 
         public void SetAsset(Material material, Mesh mesh)
         {
-            SetAsset(material);
+            SetAsset(material.name, material);
 
             _mesh = mesh;
         }

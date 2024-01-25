@@ -66,7 +66,7 @@ namespace garage.settings
             var newCarPart = MenuExtensions.PingOrCreateSO<CarPartPaintingSO>(filePath);
 
             if (material != null)
-                newCarPart.SetAsset(material);
+                newCarPart.SetAsset(material.name, material);
 
             _paintings.Add(newCarPart);
         }
