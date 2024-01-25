@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a208468ba867e4faadd23b74dd4247, type: 3}
   m_Name: front_bumper_Bullbar_v5
   m_EditorClassIdentifier: 
-  name: 
+  name: Bullbar_v5
   description: 
   price: 0
   bought: 0
-  asset: {fileID: 0}
-  _mesh: {fileID: 0}
+  asset: {fileID: 2100000, guid: e0497f59d734aa94ca3c7ab29814df14, type: 2}
+  _mesh: {fileID: 4300000, guid: a47c0e584df7c7746a6f008d801cc8f8, type: 3}

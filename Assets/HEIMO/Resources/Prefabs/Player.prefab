@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9015387086023553624}
   - component: {fileID: 7016117603297750774}
   m_Layer: 0
-  m_Name: Headlight
+  m_Name: RoofAttachment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -953,6 +953,8 @@ MonoBehaviour:
   - {fileID: 3004777170745315730}
   _frontBumperMeshFilter: {fileID: 8411747931180980801}
   _frontBumperMeshRenderer: {fileID: 5842173364653546103}
+  _roofAttachmentMeshFilter: {fileID: 9015387086023553624}
+  _roofAttachmentMeshRenderer: {fileID: 7016117603297750774}
 --- !u!114 &7059181104087227175
 MonoBehaviour:
   m_ObjectHideFlags: 0

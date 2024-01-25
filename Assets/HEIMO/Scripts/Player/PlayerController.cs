@@ -22,6 +22,10 @@ namespace player
         [SerializeField] private MeshFilter _frontBumperMeshFilter;
         [SerializeField] private MeshRenderer _frontBumperMeshRenderer;
 
+        // Roof Attachment
+        [SerializeField] private MeshFilter _roofAttachmentMeshFilter;
+        [SerializeField] private MeshRenderer _roofAttachmentMeshRenderer;
+
         private void Awake()
         {
             _carController = GetComponent<CarController>();
@@ -64,6 +68,13 @@ namespace player
         {
             _frontBumperMeshRenderer.material = material;
             _frontBumperMeshFilter.mesh = mesh;
+        }
+
+        [Button(ButtonSizes.Medium, ButtonStyle.Box)]
+        public void ApplyRoofAttachment(Material material, Mesh mesh)
+        {
+            _roofAttachmentMeshRenderer.material = material;
+            _roofAttachmentMeshFilter.mesh = mesh;
         }
     }
 }

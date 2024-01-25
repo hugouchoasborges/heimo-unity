@@ -21,11 +21,13 @@ namespace garage.settings
         [ShowInInspector] public const string CONFIG_FILE_PAINTINGS_ROOT = CONFIG_FILE_ROOT + "/paintings";
         [ShowInInspector] public const string CONFIG_FILE_WHEELS_ROOT = CONFIG_FILE_ROOT + "/wheels";
         [ShowInInspector] public const string CONFIG_FILE_FRONTBUMPER_ROOT = CONFIG_FILE_ROOT + "/front_bumpers";
+        [ShowInInspector] public const string CONFIG_FILE_ROOFATTACHMENT_ROOT = CONFIG_FILE_ROOT + "/roof_attachment";
 
         [Header("Car Parts")]
         [SerializeField] private List<CarPartPaintingSO> _paintings = new List<CarPartPaintingSO>();
         [SerializeField] private List<CarPartWheelsSO> _wheels = new List<CarPartWheelsSO>();
         [SerializeField] private List<CarPartFrontBumperSO> _frontBumpers = new List<CarPartFrontBumperSO>();
+        [SerializeField] private List<CarPartRoofAttachmentSO> _roofAttachments = new List<CarPartRoofAttachmentSO>();
 
 
 #if UNITY_EDITOR
@@ -191,6 +193,57 @@ namespace garage.settings
                 {
                     // Create wheels using the selected mesh and material
                     Instance.CreateNewFrontBumper(material.name, material, mesh);
+                }
+            }
+        }
+
+        // ========================== Roof Attachment ============================
+
+
+        [Button(ButtonSizes.Medium, ButtonStyle.Box)]
+        public void CreateNewRoofAttachment(string name, Material material, Mesh mesh)
+        {
+            if (string.IsNullOrEmpty(name)) return;
+
+            string filePath = string.Format("{0}/roof_attachment_{1}.asset", CONFIG_FILE_ROOFATTACHMENT_ROOT, name);
+            var newCarPart = MenuExtensions.PingOrCreateSO<CarPartRoofAttachmentSO>(filePath);
+
+            if (material != null)
+                newCarPart.SetAsset(material, mesh);
+
+            _roofAttachments.Add(newCarPart);
+        }
+
+
+        [MenuItem("Assets/HEIMO/Create RoofAttachment Asset from this", true)]
+        private static bool Validate_CreateNewRoofAttachmentFromSelection()
+        {
+            Object[] selectedObjects = Selection.objects;
+            return selectedObjects.Length == 2 &&
+                   ((selectedObjects[0] is Material && selectedObjects[1] is Mesh));
+        }
+
+        [MenuItem("Assets/HEIMO/Create RoofAttachment Asset from this", false)]
+        private static void CreateNewRoofAttachmentFromSelection()
+        {
+            Object[] selectedObjects = Selection.objects;
+
+            if (selectedObjects.Length == 2)
+            {
+                Material material = null;
+                Mesh mesh = null;
+
+                // Determine the order of Mesh and Material in the selected objects
+                if (selectedObjects[0] is Material && selectedObjects[1] is Mesh)
+                {
+                    material = selectedObjects[0] as Material;
+                    mesh = selectedObjects[1] as Mesh;
+                }
+
+                if (material != null && mesh != null)
+                {
+                    // Create wheels using the selected mesh and material
+                    Instance.CreateNewRoofAttachment(material.name, material, mesh);
                 }
             }
         }
