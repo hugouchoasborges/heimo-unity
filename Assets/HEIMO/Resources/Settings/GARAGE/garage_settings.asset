@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: garage_settings
   m_EditorClassIdentifier: 
   _paintings:
-  - {fileID: 11400000, guid: 3137abcb3782fb14295dc2338e901344, type: 2}
   - {fileID: 11400000, guid: 128521da409e737429a446f9ec25ec61, type: 2}
+  - {fileID: 11400000, guid: 3137abcb3782fb14295dc2338e901344, type: 2}
   - {fileID: 11400000, guid: 332b579c48da5be40a1a0474b38fea58, type: 2}
   _wheels:
   - {fileID: 11400000, guid: 6ed4ca08a4efcbd4590d57df8a351b18, type: 2}
@@ -33,3 +33,23 @@ MonoBehaviour:
   _roofAttachments:
   - {fileID: 11400000, guid: 71a1d7d2c81c36b4aa8696d7f5b647d5, type: 2}
   - {fileID: 11400000, guid: a236ab857e6c8fc49abb82219776a195, type: 2}
+  - {fileID: 11400000, guid: a236ab857e6c8fc49abb82219776a195, type: 2}
+  - {fileID: 11400000, guid: a236ab857e6c8fc49abb82219776a195, type: 2}
+  - {fileID: 11400000, guid: cc5d5ce9e66c1be4c8736399a5c48533, type: 2}
+  - {fileID: 11400000, guid: 9e3bc61b13ae4144b811862060e1e23f, type: 2}
+  - {fileID: 11400000, guid: d15edcffc31d3a7489cbf541c9c43c8e, type: 2}
+  - {fileID: 11400000, guid: 80ad005b0ac172647acf880dfdf31e91, type: 2}
+  - {fileID: 11400000, guid: eade8452a80776f4ca5a97ccedfd0c49, type: 2}
+  - {fileID: 11400000, guid: 83fc95c1c5096304cbaa35bc40384a3a, type: 2}
+  - {fileID: 11400000, guid: 1083b49080a14a347b17f12deb50a957, type: 2}
+  - {fileID: 11400000, guid: 25e4242119ac5104fa7e32a912494a08, type: 2}
+  - {fileID: 11400000, guid: 0f804f21784ba3d48a776914accd3eef, type: 2}
+  - {fileID: 11400000, guid: 2a91fce6c47d3894988e6826c8039280, type: 2}
+  - {fileID: 11400000, guid: bf49ba16405a3a24c9e0cd22054bda09, type: 2}
+  - {fileID: 11400000, guid: e68dae7ac13cafc448ed492bfc2be42c, type: 2}
+  - {fileID: 11400000, guid: 4bba7e4f9fb6c934684f759c46857e5c, type: 2}
+  - {fileID: 11400000, guid: 9c4d55d88ba015a459e9a06d33951861, type: 2}
+  - {fileID: 11400000, guid: f103fc256a2e22045864685f1ffeddf0, type: 2}
+  - {fileID: 11400000, guid: fe111f76856b1544d903960a5a672be4, type: 2}
+  - {fileID: 11400000, guid: 1d2ac4639c64a144b97218fa1bca70cd, type: 2}
+  - {fileID: 11400000, guid: cf0c81210d9ddca458176e416a9af34f, type: 2}
