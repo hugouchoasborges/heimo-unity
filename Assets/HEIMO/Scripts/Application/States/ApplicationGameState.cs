@@ -1,5 +1,6 @@
 using fsm;
 using log;
+using scenes;
 
 namespace application
 {
@@ -21,6 +22,11 @@ namespace application
             {
                 case FSMEventType.REQUEST_RESET_GAME:
                     applicationController.RestartSystem();
+                    break;
+
+                case FSMEventType.REQUEST_GOTO_GARAGE:
+                    SceneHelper.UnloadSceneAsync(SceneType.GAME);
+                    SceneHelper.LoadSceneAsync(SceneType.GARAGE, mode: UnityEngine.SceneManagement.LoadSceneMode.Additive, setAsActive: true, callback: () => GoToState(FSMStateType.GARAGE));
                     break;
             }
         }
