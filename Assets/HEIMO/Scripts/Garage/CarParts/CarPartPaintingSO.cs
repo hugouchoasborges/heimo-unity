@@ -13,7 +13,7 @@ namespace garage
         protected override void ApplyToRunningPlayer(PlayerController playerController)
         {
             playerController.ApplyPainting(Asset);
-            GarageSettingsSO.Instance.MarkPaintingAsInUse(this);
+            PlayerInventorySO.Instance.SetPaintingInUse(this);
         }
 #endif
     }

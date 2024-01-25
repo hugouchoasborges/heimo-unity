@@ -23,91 +23,11 @@ namespace garage.settings
         [ShowInInspector] public const string CONFIG_FILE_FRONTBUMPER_ROOT = CONFIG_FILE_ROOT + "/front_bumpers";
         [ShowInInspector] public const string CONFIG_FILE_ROOFATTACHMENT_ROOT = CONFIG_FILE_ROOT + "/roof_attachment";
 
-        [Header("Car Parts")]
+        [Header("SHOP - Car Parts")]
         [SerializeField] private List<CarPartPaintingSO> _paintings = new List<CarPartPaintingSO>();
         [SerializeField] private List<CarPartWheelsSO> _wheels = new List<CarPartWheelsSO>();
         [SerializeField] private List<CarPartFrontBumperSO> _frontBumpers = new List<CarPartFrontBumperSO>();
         [SerializeField] private List<CarPartRoofAttachmentSO> _roofAttachments = new List<CarPartRoofAttachmentSO>();
-
-
-        // ========================== Painting ============================
-
-        public CarPartPaintingSO GetPaintingInUse()
-        {
-            foreach (var item in _paintings)
-                if (item.InUse)
-                    return item;
-
-            return null;
-        }
-
-        public void MarkPaintingAsInUse(CarPartPaintingSO painting)
-        {
-            foreach (var item in _paintings)
-                item.InUse = false;
-
-            painting.InUse = true;
-        }
-
-
-        // ========================== Wheels ============================
-
-        public CarPartWheelsSO GetWheelsInUse()
-        {
-            foreach (var item in _wheels)
-                if (item.InUse)
-                    return item;
-
-            return null;
-        }
-
-        public void MarkWheelsAsInUse(CarPartWheelsSO wheels)
-        {
-            foreach (var item in _wheels)
-                item.InUse = false;
-
-            wheels.InUse = true;
-        }
-
-
-        // ========================== Front Bumper ============================
-
-        public CarPartFrontBumperSO GetFrontBumperInUse()
-        {
-            foreach (var item in _frontBumpers)
-                if (item.InUse)
-                    return item;
-
-            return null;
-        }
-
-        public void MarkFrontBumperAsInUse(CarPartFrontBumperSO painting)
-        {
-            foreach (var item in _frontBumpers)
-                item.InUse = false;
-
-            painting.InUse = true;
-        }
-
-
-        // ========================== Roof Attachment ============================
-
-        public CarPartRoofAttachmentSO GetRoofAttachmentInUse()
-        {
-            foreach (var item in _roofAttachments)
-                if (item.InUse)
-                    return item;
-
-            return null;
-        }
-
-        public void MarkRoofAttachmentAsInUse(CarPartRoofAttachmentSO painting)
-        {
-            foreach (var item in _roofAttachments)
-                item.InUse = false;
-
-            painting.InUse = true;
-        }
 
 
 #if UNITY_EDITOR
@@ -115,12 +35,17 @@ namespace garage.settings
         private void OnValidate()
         {
             // Remove invalid entries
-
             if (_paintings.Count > 0)
                 _paintings.RemoveAll(p => p == null);
 
             if (_wheels.Count > 0)
                 _wheels.RemoveAll(w => w == null);
+
+            if (_frontBumpers.Count > 0)
+                _frontBumpers.RemoveAll(f => f == null);
+
+            if (_roofAttachments.Count > 0)
+                _roofAttachments.RemoveAll(r => r == null);
         }
 
         // ----------------------------------------------------------------------------------
@@ -131,6 +56,12 @@ namespace garage.settings
         public static void MenuItem_GarageSettings()
         {
             MenuExtensions.PingOrCreateSO<GarageSettingsSO>(Path.Combine(CONFIG_FILE_ROOT, CONFIG_FILE_PATH));
+        }
+
+        [Button("Player Inventory")]
+        public void OpenPlayerInventory()
+        {
+            PlayerInventorySO.MenuItem_PlayerInventory();
         }
 
 

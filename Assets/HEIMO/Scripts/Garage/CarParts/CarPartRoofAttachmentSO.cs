@@ -17,7 +17,7 @@ namespace garage
         protected override void ApplyToRunningPlayer(PlayerController playerController)
         {
             playerController.ApplyRoofAttachment(Asset, Mesh);
-            GarageSettingsSO.Instance.MarkRoofAttachmentAsInUse(this);
+            PlayerInventorySO.Instance.SetRoofAttachmentInUse(this);
         }
 
         public void SetAsset(Material material, Mesh mesh)

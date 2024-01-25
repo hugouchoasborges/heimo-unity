@@ -17,7 +17,7 @@ namespace garage
         protected override void ApplyToRunningPlayer(PlayerController playerController)
         {
             playerController.ApplyFrontBumper(Asset, Mesh);
-            GarageSettingsSO.Instance.MarkFrontBumperAsInUse(this);
+            PlayerInventorySO.Instance.SetFrontBumperInUse(this);
         }
 
         public void SetAsset(Material material, Mesh mesh)

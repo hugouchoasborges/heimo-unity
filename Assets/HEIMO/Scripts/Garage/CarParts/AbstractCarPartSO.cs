@@ -10,25 +10,12 @@ namespace garage
         [SerializeField] protected string name;
         [SerializeField][TextArea(4, 10)] protected string description;
         [SerializeField][MinValue(0)] protected int price;
-        [SerializeField] protected bool bought = false;
-        [SerializeField] protected bool inUse = false;
 
         [SerializeField] protected T asset;
 
         public string Name => name;
         public string Description => description;
         public int Price => price;
-        public bool Bought
-        {
-            get => bought;
-            set => bought = value;
-        }
-
-        public bool InUse
-        {
-            get => inUse;
-            set => inUse = value;
-        }
 
         public abstract T Asset { get; }
 

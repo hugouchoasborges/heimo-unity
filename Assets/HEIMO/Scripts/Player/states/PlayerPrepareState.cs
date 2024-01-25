@@ -17,38 +17,38 @@ namespace player
 
         private void LoadPlayerPreferences()
         {
-            GarageSettingsSO garageSettings = GarageSettingsSO.Instance;
+            PlayerInventorySO playerInventory = PlayerInventorySO.Instance;
 
             // Skin - painting
-            CarPartPaintingSO painting = garageSettings.GetPaintingInUse();
+            CarPartPaintingSO painting = playerInventory.PaintingInUse;
             if (painting != null)
             {
                 playerController.ApplyPainting(painting.Asset);
-                garageSettings.MarkPaintingAsInUse(painting);
+                playerInventory.SetPaintingInUse(painting);
             }
 
             // Skin - wheels
-            CarPartWheelsSO wheels = garageSettings.GetWheelsInUse();
+            CarPartWheelsSO wheels = playerInventory.WheelInUse;
             if (wheels != null)
             {
                 playerController.ApplyWheels(wheels.Asset, wheels.MeshLeft, wheels.MeshRight, wheels.ColliderRadius);
-                garageSettings.MarkWheelsAsInUse(wheels);
+                playerInventory.SetWheelsInUse(wheels);
             }
 
             // Skin - front bumper
-            CarPartFrontBumperSO frontBumper = garageSettings.GetFrontBumperInUse();
+            CarPartFrontBumperSO frontBumper = playerInventory.FrontBumperInUse;
             if (frontBumper != null)
             {
                 playerController.ApplyFrontBumper(frontBumper.Asset, frontBumper.Mesh);
-                garageSettings.MarkFrontBumperAsInUse(frontBumper);
+                playerInventory.SetFrontBumperInUse(frontBumper);
             }
 
             // Skin - roof attachment
-            CarPartRoofAttachmentSO roofAttachment = garageSettings.GetRoofAttachmentInUse();
+            CarPartRoofAttachmentSO roofAttachment = playerInventory.RoofAttachmentInUse;
             if (roofAttachment != null)
             {
                 playerController.ApplyRoofAttachment(roofAttachment.Asset, roofAttachment.Mesh);
-                garageSettings.MarkRoofAttachmentAsInUse(roofAttachment);
+                playerInventory.SetRoofAttachmentInUse(roofAttachment);
             }
         }
     }

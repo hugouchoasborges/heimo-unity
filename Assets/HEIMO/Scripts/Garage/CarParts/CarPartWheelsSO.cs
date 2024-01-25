@@ -31,7 +31,7 @@ namespace garage
         protected override void ApplyToRunningPlayer(PlayerController playerController)
         {
             playerController.ApplyWheels(Asset, MeshLeft, MeshRight, ColliderRadius);
-            GarageSettingsSO.Instance.MarkWheelsAsInUse(this);
+            PlayerInventorySO.Instance.SetWheelsInUse(this);
         }
 #endif
     }
