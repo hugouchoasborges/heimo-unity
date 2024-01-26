@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Default
   description: 
   price: 1
-  vendable: 1
+  default: 1
   _material: {fileID: 2100000, guid: e62ce5b313c3fc8479752b1f2b7192e0, type: 2}
   _meshLeft: {fileID: 4300002, guid: 235e5a16243f8864aaf9f78d3d91b591, type: 3}
   _meshRight: {fileID: 4300004, guid: 235e5a16243f8864aaf9f78d3d91b591, type: 3}

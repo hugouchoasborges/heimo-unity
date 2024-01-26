@@ -15,5 +15,5 @@ MonoBehaviour:
   name: yellow
   description: 
   price: 1
-  vendable: 1
+  default: 1
   _material: {fileID: 2100000, guid: b579c63d50dc4924f80ddec8b83d4a36, type: 2}

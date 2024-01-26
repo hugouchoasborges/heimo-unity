@@ -29,6 +29,11 @@ namespace garage.settings
         [SerializeField] private List<CarPartFrontBumperSO> _frontBumpers = new List<CarPartFrontBumperSO>();
         [SerializeField] private List<CarPartRoofAttachmentSO> _roofAttachments = new List<CarPartRoofAttachmentSO>();
 
+        public List<CarPartPaintingSO> Paintings => _paintings;
+        public List<CarPartWheelsSO> Wheels => _wheels;
+        public List<CarPartFrontBumperSO> FrontBumpers => _frontBumpers;
+        public List<CarPartRoofAttachmentSO> RoofAttachments => _roofAttachments;
+
         [Header("Prefabs")]
         [SerializeField] private GameObject _garageEntryPrefab;
         public GameObject GarageEntryPrefab => _garageEntryPrefab;

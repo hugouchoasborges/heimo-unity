@@ -71,6 +71,91 @@ namespace garage.settings
         }
 
 
+        // ========================== Reset Purchases ============================
+
+        [Button(ButtonSizes.Medium, ButtonStyle.Box)]
+        public void ResetPurchases()
+        {
+            GarageSettingsSO garageSettings = GarageSettingsSO.Instance;
+
+            _paintings.Clear();
+            _paintingInUse = null;
+            foreach (var item in garageSettings.Paintings)
+                if (item.Default)
+                {
+                    _paintings.Add(item);
+                    _paintingInUse = item;
+                }
+
+            _wheels.Clear();
+            _wheelInUse = null;
+            foreach (var item in garageSettings.Wheels)
+                if (item.Default)
+                {
+                    _wheels.Add(item);
+                    _wheelInUse = item;
+                }
+
+            _frontBumpers.Clear();
+            _frontBumperInUse = null;
+            foreach (var item in garageSettings.FrontBumpers)
+                if (item.Default)
+                {
+                    _frontBumpers.Add(item);
+                    _frontBumperInUse = item;
+                }
+
+            _roofAttachments.Clear();
+            _roofAttachmentInUse = null;
+            foreach (var item in garageSettings.RoofAttachments)
+                if (item.Default)
+                {
+                    _roofAttachments.Add(item);
+                    _roofAttachmentInUse = item;
+                }
+
+        }
+
+
+        // ========================== Purchase ============================
+
+        private bool BuyCarPart(ICarPart carPart)
+        {
+            if (carPart.Price > Credit)
+                return false;
+
+            Credit -= carPart.Price;
+            return true;
+        }
+
+        public void BuyPainting(CarPartPaintingSO carPart)
+        {
+            if (!BuyCarPart(carPart)) return;
+
+            _paintings.Add(carPart);
+        }
+
+        public void BuyWheels(CarPartWheelsSO carPart)
+        {
+            if (!BuyCarPart(carPart)) return;
+
+            _wheels.Add(carPart);
+        }
+
+        public void BuyFrontBumper(CarPartFrontBumperSO carPart)
+        {
+            if (!BuyCarPart(carPart)) return;
+
+            _frontBumpers.Add(carPart);
+        }
+
+        public void BuyRoofAttachment(CarPartRoofAttachmentSO carPart)
+        {
+            if (!BuyCarPart(carPart)) return;
+
+            _roofAttachments.Add(carPart);
+        }
+
         // ========================== Ownership CHeck ============================
 
         public bool PlayerHasCarPart(ICarPart carPart)
@@ -79,6 +164,16 @@ namespace garage.settings
             if (_wheels.Any(part => (part as ICarPart) == carPart)) return true;
             if (_frontBumpers.Any(part => (part as ICarPart) == carPart)) return true;
             if (_roofAttachments.Any(part => (part as ICarPart) == carPart)) return true;
+
+            return false;
+        }
+
+        public bool PlayerEquipped(ICarPart carPart)
+        {
+            if ((PaintingInUse as ICarPart) == carPart) return true;
+            if ((WheelInUse as ICarPart) == carPart) return true;
+            if ((FrontBumperInUse as ICarPart) == carPart) return true;
+            if ((RoofAttachmentInUse as ICarPart) == carPart) return true;
 
             return false;
         }

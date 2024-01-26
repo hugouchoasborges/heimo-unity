@@ -1,5 +1,6 @@
 using fsm;
 using garage;
+using garage.settings;
 
 namespace player
 {
@@ -40,6 +41,9 @@ namespace player
                         playerController.ApplyRoofAttachment(roofAttachment.Material, roofAttachment.Mesh);
                     break;
 
+                case FSMEventType.REQUEST_RESET_GARAGE:
+                    PlayerInventorySO.Instance.ResetPurchases();
+                    break;
             }
         }
     }

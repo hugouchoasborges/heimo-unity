@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd6096defe26ec4ab55a543fc2d914d, type: 3}
   m_Name: player_inventory
   m_EditorClassIdentifier: 
-  _credit: 800
+  _credit: 310
   _paintings:
   - {fileID: 11400000, guid: 3a023ff9adf9c5843a68560887d07212, type: 2}
   _wheels:

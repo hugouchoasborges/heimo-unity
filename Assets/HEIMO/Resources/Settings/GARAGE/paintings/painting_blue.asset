@@ -15,4 +15,5 @@ MonoBehaviour:
   name: blue
   description: 
   price: 150
+  default: 0
   _material: {fileID: 2100000, guid: 9108fba30cf6c9849b0f5cb8ec8b82c2, type: 2}

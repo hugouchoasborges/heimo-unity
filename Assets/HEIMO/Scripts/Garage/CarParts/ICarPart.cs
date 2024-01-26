@@ -6,6 +6,6 @@
         string Description { get; }
 
         int Price { get; }
-        bool Vendable { get; }
+        bool Default { get; }
     }
 }

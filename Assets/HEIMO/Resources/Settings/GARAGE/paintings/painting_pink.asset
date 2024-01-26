@@ -15,4 +15,5 @@ MonoBehaviour:
   name: pink
   description: 
   price: 150
+  default: 0
   _material: {fileID: 2100000, guid: 09b42202b07dfa147b21644eef6fe211, type: 2}

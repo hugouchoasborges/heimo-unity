@@ -54,7 +54,7 @@ namespace garage
             List<ICarPart> allCarParts = GarageSettingsSO.Instance.GetAllCarParts();
             foreach (var carPart in allCarParts)
             {
-                if (!carPart.Vendable) continue;
+                if (!carPart.Default) continue;
                 if (carPart.Price <= 0)
                 {
                     ELog.LogWarning(ELogType.NONE, "Car Part removed from store. {0}, price={1}", carPart.Name, carPart.Price);

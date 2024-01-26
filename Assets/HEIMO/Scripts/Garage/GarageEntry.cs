@@ -37,10 +37,13 @@ namespace garage
             }
 
             bool bought = PlayerInventorySO.Instance.PlayerHasCarPart(_carPart);
+            bool equipped = PlayerInventorySO.Instance.PlayerEquipped(_carPart);
 
             //_icon = _carPart.Icon;
             _name.text = gameObject.name = _carPart.Name;
-            _price.text = string.Format("$ {0}", _carPart.Price);
+            _price.text =
+                bought ? "Owned"
+                : string.Format("$ {0}", _carPart.Price);
 
             bool canAfford = PlayerInventorySO.Instance.Credit >= _carPart.Price;
             _price.color =
@@ -48,11 +51,12 @@ namespace garage
                 ? _colorCanAfford
                 : _colorCantAfford;
 
+
             _buyButton.gameObject.SetActive(!bought);
             _equipButton.gameObject.SetActive(bought);
 
             _buyButton.interactable = canAfford;
-            _equipButton.interactable = canAfford;
+            _equipButton.interactable = !equipped;
             //_previewButton.interactable = canAfford;
 
             gameObject.SetActive(true);
@@ -91,7 +95,22 @@ namespace garage
 
         private void DoBuy()
         {
-            // TODO: Implement
+            PlayerInventorySO inventory = PlayerInventorySO.Instance;
+
+            if (_carPart is CarPartPaintingSO painting)
+                inventory.BuyPainting(painting);
+
+            else if (_carPart is CarPartWheelsSO wheels)
+                inventory.BuyWheels(wheels);
+
+            else if (_carPart is CarPartFrontBumperSO frontBumper)
+                inventory.BuyFrontBumper(frontBumper);
+
+            else if (_carPart is CarPartRoofAttachmentSO roofAttachment)
+                inventory.BuyRoofAttachment(roofAttachment);
+
+            UpdateEntry();
+
         }
 
         // ========================== Equip ============================
@@ -105,7 +124,22 @@ namespace garage
 
         private void DoEquip()
         {
-            // TODO: Implement
+            PlayerInventorySO inventory = PlayerInventorySO.Instance;
+
+            if (_carPart is CarPartPaintingSO painting)
+                inventory.SetPaintingInUse(painting);
+
+            else if (_carPart is CarPartWheelsSO wheels)
+                inventory.SetWheelsInUse(wheels);
+
+            else if (_carPart is CarPartFrontBumperSO frontBumper)
+                inventory.SetFrontBumperInUse(frontBumper);
+
+            else if (_carPart is CarPartRoofAttachmentSO roofAttachment)
+                inventory.SetRoofAttachmentInUse(roofAttachment);
+
+            OnPreview();
+            UpdateEntry();
         }
 
         // ========================== Preview ============================
@@ -122,7 +156,7 @@ namespace garage
             FSMEventType eventType = FSMEventType.NONE;
 
             if (_carPart is CarPartPaintingSO)
-                eventType = FSMEventType.REQUEST_PREVIEW_PAINTING ;
+                eventType = FSMEventType.REQUEST_PREVIEW_PAINTING;
             else if (_carPart is CarPartWheelsSO)
                 eventType = FSMEventType.REQUEST_PREVIEW_WHEELS;
             else if (_carPart is CarPartFrontBumperSO)
