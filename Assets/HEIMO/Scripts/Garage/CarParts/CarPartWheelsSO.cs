@@ -27,6 +27,7 @@ namespace garage
             _material = material;
             _meshLeft = meshLeft;
             _meshRight = meshRight;
+            carPartType = CarPartType.Wheel;
         }
 
 #if UNITY_EDITOR

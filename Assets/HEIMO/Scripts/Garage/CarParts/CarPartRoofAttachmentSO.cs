@@ -25,6 +25,7 @@ namespace garage
             _material = material;
             _mesh = mesh;
             name = Mesh.name;
+            carPartType = CarPartType.RoofAttachment;
         }
 #endif
     }

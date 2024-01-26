@@ -15,6 +15,8 @@ MonoBehaviour:
   name: Tire_v5
   description: 
   price: 1500
+  default: 0
+  carPartType: 1
   _material: {fileID: 2100000, guid: 1be1556eb3390e54c811f1e09b8d8390, type: 2}
   _meshLeft: {fileID: 4300002, guid: 6d6c5a02f52aba14aa151ef71d0e2968, type: 3}
   _meshRight: {fileID: 4300004, guid: 6d6c5a02f52aba14aa151ef71d0e2968, type: 3}

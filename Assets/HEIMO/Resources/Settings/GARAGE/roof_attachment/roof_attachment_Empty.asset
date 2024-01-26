@@ -16,5 +16,6 @@ MonoBehaviour:
   description: 
   price: 1
   default: 1
+  carPartType: 3
   _material: {fileID: 0}
   _mesh: {fileID: 0}

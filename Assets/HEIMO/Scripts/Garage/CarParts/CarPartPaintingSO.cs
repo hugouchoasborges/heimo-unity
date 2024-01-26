@@ -13,6 +13,7 @@ namespace garage
         {
             name = material.name;
             _material = material;
+            carPartType = CarPartType.Painting;
         }
 
 #if UNITY_EDITOR

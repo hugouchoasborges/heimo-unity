@@ -20,6 +20,8 @@ namespace garage
         [SerializeField] private Button _buyButton;
         [SerializeField] private Button _equipButton;
 
+        [SerializeField] private TextMeshProUGUI _carPartType;
+
         private ICarPart _carPart;
 
         public void LoadCarPart(ICarPart carPart)
@@ -41,6 +43,7 @@ namespace garage
 
             //_icon = _carPart.Icon;
             _name.text = gameObject.name = _carPart.Name;
+            _carPartType.text = _carPart.CarPartTypeStr;
             _price.text =
                 bought ? "Owned"
                 : string.Format("$ {0}", _carPart.Price);

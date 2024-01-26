@@ -25,6 +25,7 @@ namespace garage
             name = material.name;
             _material = material;
             _mesh = mesh;
+            carPartType = CarPartType.FrontBumper;
         }
 #endif
     }

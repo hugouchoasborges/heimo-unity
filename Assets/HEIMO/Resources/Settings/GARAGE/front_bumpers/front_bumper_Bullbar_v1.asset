@@ -15,5 +15,7 @@ MonoBehaviour:
   name: Bullbar_v1
   description: 
   price: 40
+  default: 0
+  carPartType: 2
   _material: {fileID: 2100000, guid: 051a3fa57fab02f49a6463588297b786, type: 2}
   _mesh: {fileID: 4300000, guid: d7a4c612c1099a74bae3e342b76dc76e, type: 3}
