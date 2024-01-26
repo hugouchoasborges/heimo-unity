@@ -25,7 +25,7 @@ namespace garage
         private void OnEnable()
         {
             _creditInput.onEndEdit.AddListener(ValidateCreditInput);
-            UpdateCredit(PlayerInventorySO.Instance.Credit);
+            UpdateCredit();
         }
 
         private void OnDisable()
@@ -54,7 +54,6 @@ namespace garage
             List<ICarPart> allCarParts = GarageSettingsSO.Instance.GetAllCarParts();
             foreach (var carPart in allCarParts)
             {
-                if (!carPart.Default) continue;
                 if (carPart.Price <= 0)
                 {
                     ELog.LogWarning(ELogType.NONE, "Car Part removed from store. {0}, price={1}", carPart.Name, carPart.Price);
@@ -91,13 +90,13 @@ namespace garage
                     value = 0;
 
                 PlayerInventorySO.Instance.Credit = value;
-                UpdateCredit(value);
+                UpdateCredit();
             }
         }
 
-        private void UpdateCredit(int credit)
+        public void UpdateCredit()
         {
-            _creditInput.text = System.Math.Max(0, credit).ToString();
+            _creditInput.text = System.Math.Max(0, PlayerInventorySO.Instance.Credit).ToString();
             UpdateEntries();
         }
 

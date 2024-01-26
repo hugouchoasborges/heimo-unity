@@ -47,7 +47,7 @@ namespace garage
 
             bool canAfford = PlayerInventorySO.Instance.Credit >= _carPart.Price;
             _price.color =
-                canAfford
+                (canAfford || bought)
                 ? _colorCanAfford
                 : _colorCantAfford;
 
@@ -110,6 +110,7 @@ namespace garage
                 inventory.BuyRoofAttachment(roofAttachment);
 
             UpdateEntry();
+            fsm.FSM.DispatchGameEventToAll(FSMEventType.ON_CREDIT_UPDATED);
 
         }
 
@@ -140,6 +141,7 @@ namespace garage
 
             OnPreview();
             UpdateEntry();
+            fsm.FSM.DispatchGameEventToAll(FSMEventType.ON_CREDIT_UPDATED);
         }
 
         // ========================== Preview ============================
@@ -168,6 +170,8 @@ namespace garage
             {
                 FSM.DispatchGameEventToAll(eventType, _carPart);
             }
+
+            fsm.FSM.DispatchGameEventToAll(FSMEventType.ON_CREDIT_UPDATED);
         }
 
 #if UNITY_EDITOR

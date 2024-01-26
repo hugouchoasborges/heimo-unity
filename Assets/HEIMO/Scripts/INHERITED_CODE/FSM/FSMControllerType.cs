@@ -8,5 +8,6 @@ namespace fsm
 		APPLICATION = 3,
 		PLAYER = 4,
 		MENU = 5,
+		GARAGE = 6,
 }
 }

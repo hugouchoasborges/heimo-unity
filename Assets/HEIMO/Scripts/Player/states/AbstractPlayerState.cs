@@ -27,6 +27,10 @@ namespace player
                 case FSMEventType.APPLICATION_GAME_ENTERED:
                     GoToState(FSMStateType.GAME);
                     break;
+
+                case FSMEventType.REQUEST_RESET_GARAGE:
+                    LoadPlayerPreferences();
+                    break;
             }
         }
 

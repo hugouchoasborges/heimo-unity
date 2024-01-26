@@ -54,4 +54,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fe111f76856b1544d903960a5a672be4, type: 2}
   - {fileID: 11400000, guid: 1d2ac4639c64a144b97218fa1bca70cd, type: 2}
   - {fileID: 11400000, guid: cf0c81210d9ddca458176e416a9af34f, type: 2}
-  _garageEntryPrefab: {fileID: 0}
+  _garageEntryPrefab: {fileID: 3532325331788095499, guid: 04c298c791f893d41bd1214331bbcecb, type: 3}

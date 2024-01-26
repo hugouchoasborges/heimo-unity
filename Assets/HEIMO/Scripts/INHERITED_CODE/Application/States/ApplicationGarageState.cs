@@ -18,10 +18,6 @@ namespace application
 
             switch (eventType)
             {
-                case FSMEventType.REQUEST_RESET_GARAGE:
-                    applicationController.RestartSystem();
-                    break;
-
                 case FSMEventType.REQUEST_GOTO_GAME:
                     SceneHelper.UnloadSceneAsync(SceneType.GARAGE);
                     SceneHelper.LoadSceneAsync(SceneType.GAME, mode: UnityEngine.SceneManagement.LoadSceneMode.Additive, setAsActive: true, callback: () => GoToState(FSMStateType.GAME));

@@ -4,6 +4,7 @@ using System.IO;
 using tools;
 using System.Collections.Generic;
 using System.Linq;
+using fsm;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -114,6 +115,7 @@ namespace garage.settings
                     _roofAttachmentInUse = item;
                 }
 
+            DOTweenDelayedCall.DelayedCall(() => FSM.DispatchGameEventToAll(FSMEventType.ON_CREDIT_UPDATED), .5f);
         }
 
 
